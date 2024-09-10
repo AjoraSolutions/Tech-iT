@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/student/login" method="POST">
+            <label for="username">Username</label>
+            <input type="username" id="username" name="username" placeholder="Enter your username" required>
+    
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="link">
+            <p>Don't have an account? <a href="/student/signup">Signup</a></p>
+        </div>
+    </div>
+</body>
+</html>
