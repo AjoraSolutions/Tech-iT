@@ -1,8 +1,4 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+
 
 .join-cont {
     display: flex;
@@ -13,7 +9,7 @@
     flex-wrap: wrap;
 }
 
-img {
+.join-img {
     object-fit: cover;
     width: 45%;
     height: auto;
@@ -59,8 +55,12 @@ img {
 }
 
 .join-btn:hover{
-    background-color: rgb(7, 7, 70);
+    color: white;
+    background-color: rgb(0, 46, 172);
     box-shadow: 0 7px 14px rgba(31, 30, 30, 0.7);
+}
+.join-btn a:hover{
+    color: white;
 }
 
 /* Responsive Design */
@@ -70,7 +70,7 @@ img {
         padding: 20px;
     }
 
-    img {
+    .join-img {
         width: 80%;
         margin: 1rem;
     }
@@ -97,7 +97,7 @@ img {
         line-height: 2rem;
     }
 
-    img {
+    .join-img {
         width: 100%;
         margin: 1rem 0;
     }

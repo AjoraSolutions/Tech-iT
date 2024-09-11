@@ -15,11 +15,12 @@ app.use(express.urlencoded({ extended: true }));
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Define the directory where views are located
 app.set('views', path.join(__dirname, 'views'));
 
-// Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
 
 // MongoDB connection string from environment variables
 const dbURI = process.env.DB_URL;
@@ -41,9 +42,14 @@ const User = require('./models/user');
 // Define routes
 
 // Home page route
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
+    res.send("Home Page");
+});
+
+//  eplore courses route
+app.get('/explore/allCourses', (req, res) => {
     // res.send('Home page');
-    res.render("layout/boilerplate.ejs");
+    res.render("courses/allCourses.ejs", { body: '' });
 });
 
 // Route to display the signup form
