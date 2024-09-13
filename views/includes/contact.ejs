@@ -1,0 +1,78 @@
+<div class="contact-us">
+
+    <div class="cont-head">
+        <p>Contact Our Team</p>
+        <h2>Got Any Questions?</h2>
+    </div>
+
+    <div class="cont-options">
+
+        <div class="cont-card card text-center mb-3 h-100">
+            <div class="cont-card-body card-body">
+                <span><i class="fa-brands fa-whatsapp fa-2xl"></i></span>
+                <h6 class="cont-card-title card-title">Have Questions? <br> Chat with Us on WhatsApp!</h6>
+                <p class="cont-msg">We're here to assist you! Whether you have questions about our tech courses, 100% placement guarantee, or anything else, feel free to reach out. Start a conversation with our team and get instant responses.</p>
+                <a href="#" class="cont-btn btn mt-2 rounded-pill">Chat Now on WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="cont-card card text-center mb-3 h-100">
+            <div class="cont-card-body card-body">
+                <span><i class="fa-solid fa-phone fa-xl"></i></span>
+                <h6 class="cont-card-title card-title">Need Help? <br> Request a Call Back!</h6>
+                <p class="cont-msg">Interested in our courses or want to know more about your career options? Leave your contact details, and one of our experts will get in touch with you to guide you through the process.</p>
+                <button class="cont-btn btn mt-2 rounded-pill" id="callBackBtn">Get a Call Back</button>
+            </div>
+
+        </div>
+
+        <div class="cont-card card text-center mb-3 h-100">
+            <div class="cont-card-body card-body">
+                <span><i class="fa-regular fa-calendar-check fa-2xl"></i></span>
+                <h6 class="cont-card-title card-title">Want to Discuss? <br> Book an Appointment!</h6>
+                <p class="cont-msg">Schedule a one-on-one consultation with our experts. Just fill in your details, and we’ll confirm your appointment.</p>
+                <button class="cont-btn btn mt-2 rounded-pill" id="appointmentBtn">Book an Appointment</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal Form (Initially Hidden) -->
+<div class="modal-overlay" id="modalOverlay"></div>
+
+<div class="form-modal" id="formModal">
+
+    <button class="close-btn" id="closeModal">&times;</button>
+    <h4 id="modalTitle">Fill in your details</h4>
+
+    <!-- Call Back Form -->
+    <form id="callBackForm" class="modal-form">
+        <div class="mb-3">
+            <label for="callBackName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="callBackName" placeholder="Your Name">
+        </div>
+        <div class="mb-3">
+            <label for="callBackPhone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="callBackPhone" placeholder="Your Phone Number">
+        </div>
+        <button type="submit" class="btn btn-primary rounded-pill">Submit</button>
+    </form>
+
+    <!-- Book Appointment Form -->
+    <form id="appointmentForm" class="modal-form">
+        <div class="mb-3">
+            <label for="appointmentName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="appointmentName" placeholder="Your Name">
+        </div>
+        <div class="mb-3">
+            <label for="appointmentPhone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="appointmentPhone" placeholder="Your Phone Number">
+        </div>
+        <div class="mb-3">
+            <label for="appointmentDate" class="form-label">Preferred Date</label>
+            <input type="date" class="form-control" id="appointmentDate">
+        </div>
+        <button type="submit" class="btn btn-primary rounded-pill">Submit</button>
+    </form>
+</div>
