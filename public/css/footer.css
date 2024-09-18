@@ -1,0 +1,138 @@
+.foot{
+    background-color: rgb(5, 65, 114);
+}
+.foot-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.foot-logo img{
+    width: 7rem;
+}
+.foot-logo h2{
+    color: white;
+    width: 20rem;
+    padding: 1rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.foot-first{
+    display: flex;
+    justify-content: space-between;
+    padding: 52px;
+}
+.foot-options{
+    display: flex;
+    justify-content: space-around;
+}
+.foot-options ul{
+    padding: 0 3rem;
+    list-style: none;
+}
+.foot-options ul li a{
+    color: aliceblue;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.5rem;
+    list-style: none;
+    text-decoration: none;
+}
+.foot-options li a:hover{
+    border-bottom: 1px solid white;
+}
+
+.foot-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foot-icons li{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 1.2rem 1rem 1rem 1rem;
+    border-radius: 50px;
+    list-style: none;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+.foot-icons li a{
+    display: flex;
+    justify-content: center;
+    color:papayawhip;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.foot-copy{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.foot-icons li:hover{
+    transform: translateY(-0.5rem);
+    box-shadow: 0px  4px 12px rgb(253, 253, 253);
+}
+.foot-copy p{
+    color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .foot-logo img {
+        margin: auto;
+        width:  7rem;
+    }
+    .foot-first {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    .foot-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    .foot-options ul {
+        padding: 0.5rem 0;
+    }
+    .foot-options ul li a {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .foot-logo img {
+        margin: auto;
+        width:  7rem;
+    }
+    .foot-first {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    .foot-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    .foot-options ul {
+        padding: 0.5rem 0;
+    }
+    .foot-options ul li a {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 480px) {
+    .foot-options ul li a {
+        font-size: 0.9rem;
+    }
+    .foot-logo img {
+        margin: auto;
+        width: 5rem;
+    }
+    .foot-copy p {
+        font-size: 0.8rem;
+    }
+}

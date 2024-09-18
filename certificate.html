@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Certified</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .get-certified {
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 20px;
+        }
+        .get-certified h1{
+            font-size: 3rem;
+        }
+
+        .get-certified span {
+            color: blue;
+        }
+
+        .cert-section {
+            display: flex;
+            flex-direction: column; /* Default column layout */
+            align-items: center;    /* Center items */
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .left-section, .right-section {
+            width: 100%; /* Full width for small screens */
+            padding: 1rem;
+            box-sizing: border-box; /* Include padding in width */
+            text-align: center; /* Center align text */
+        }
+
+        .features h3 {
+            margin-bottom: 0.5rem; /* Space between headings and paragraphs */
+        }
+
+        .enroll-btn {
+            background: rgb(47, 109, 243);
+            padding: 0.5rem; /* Increased padding for easier tapping */
+            color: white;
+            font-weight: 500;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border: none;
+            height: auto; /* Auto height for responsive button */
+            min-width: 100px; /* Minimum width for the button */
+            transition: all 0.2s ease;
+        }
+
+        .enroll-btn:hover {
+            background: rgb(15, 66, 175);
+            transform: scale(1.05); /* Slightly smaller scale for better effect */
+        }
+
+        .right-section img {
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 1rem; /* Add margin for spacing */
+        }
+        .right-section h3{
+            /* padding-left: 5rem; */
+            text-align: center;
+        }
+
+        .fa-award {
+            color: blue;
+        }
+
+        /* Media Queries */
+        @media (max-width: 480px) {
+            .get-certified {
+                font-size: 1.2rem; /* Smaller font size for very small screens */
+            }
+            .enroll-btn {
+                width: 100%; /* Full width for buttons */
+                min-width: unset; /* Remove minimum width */
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .get-certified {
+                font-size: 1.4rem; /* Medium font size for small tablets */
+            }
+            .left-section, .right-section {
+                padding: 1rem 0.5rem; /* Less padding on smaller tablets */
+            }
+        }
+
+        @media (min-width: 769px) {
+            .cert-section {
+                flex-direction: row; /* Row layout for larger screens */
+            }
+
+            .left-section, .right-section {
+                width: 50%; /* Each section takes half the width */
+                text-align: left; /* Align text to the left for larger screens */
+            }
+
+            .right-section {
+                text-align: right; /* Right align image section */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .get-certified {
+                font-size: 2rem; /* Larger font size for desktops */
+            }
+
+            .enroll-btn {
+                padding: 1rem; /* Larger button padding for desktops */
+            }
+            .right-section h3{
+            padding-left: 5rem;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="get-certified">
+        <h1>Get <span>Certified.</span></h1>
+    </div>
+
+    <section class="cert-section">
+        <div class="left-section">
+            <div class="features">
+                <div class="feature">
+                    <h3><i class="fa-solid fa-award"></i> &nbsp; Start today</h3>
+                    <p>You are just months away from cracking your dream company.</p>
+                </div>
+
+                <div class="feature">
+                    <h3><i class="fa-solid fa-award"></i> &nbsp; Believe in yourself</h3>
+                    <p>Coding is simple. You just need the right guidance. Consistency & hard work will help you be internship/placement ready for tech companies.</p>
+                </div>
+                <button class="enroll-btn" aria-label="Enroll Now">Enroll Now <i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <h3>START YOUR PLACEMENT JOURNEY TODAY</h3>
+            <img src="certificate.png" alt="Certificate of Completion in Coding">
+        </div>
+    </section>
+</body>
+</html>

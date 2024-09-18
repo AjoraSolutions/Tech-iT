@@ -46,6 +46,11 @@ app.get("/", (req, res) => {
     res.send("Home Page");
 });
 
+//  index route
+app.get('/index', (req, res) => {
+    res.render("index/index.ejs", { body: '' });
+});
+
 //  eplore courses route
 app.get('/explore/allCourses', (req, res) => {
     // res.send('Home page');
