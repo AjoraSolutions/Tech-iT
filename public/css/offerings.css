@@ -14,6 +14,16 @@ body {
     animation: fadeInDown 1.5s;
 }
 
+.offring-card-tital{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.takeLook{
+    padding-top: 2rem;
+    font-weight: 600;
+    color: #208afc;
+}
+
 .offering {
     display: flex;
     flex-wrap: wrap;

@@ -57,6 +57,13 @@ app.get('/explore/allCourses', (req, res) => {
     res.render("courses/allCourses.ejs", { body: '' });
 });
 
+//about
+app.get('/about', (req, res) => {
+    // res.send('Home page');
+    res.render("about/aboutUs.ejs", { body: '' });
+});
+
+
 // Route to display the signup form
 app.get('/student/signup', (req, res) => {
     res.render('user/signup'); // Render the signup view from the "views/user" directory
