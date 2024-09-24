@@ -8,7 +8,7 @@
         </div>
         <p>At Tech-iT, we believe that education is the key to unlocking your full potential. Our platform offers a diverse range of courses designed to meet the needs of learners at every stage of their journey. Whether you're looking to acquire new skills, advance your career, or explore a personal passion, [Platform Name] has the resources you need to succeed.</p>
 
-        <button type="button" class="head-exp-btn">Explore Courses &nbsp; <span><i class="fa-solid fa-chevron-right"></i></span></button>
+        <button type="button" class="head-exp-btn" onclick="window.location.href='/explore/allCourses'">Explore Courses &nbsp; <span><i class="fa-solid fa-chevron-right"></i></span></button>
       </div>
       <div class="right-section">
         <div class="hero-img">
@@ -53,7 +53,7 @@
 </div>
 
 <!-- Courses section -->
-<%- include("./courseSec.ejs") %>
+<%- include("./courseSec.ejs", { allCourses: allCourses }) %>
 
 <!-- Tech-iT Offers you -->
 <%- include("../includes/offerings.ejs") %>

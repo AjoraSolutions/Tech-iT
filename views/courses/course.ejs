@@ -1,0 +1,53 @@
+<%- include("../layout/coursesBoiler.ejs") %>
+
+<div class="course-detail-page">
+    <!-- Hero Section -->
+    <div class="course-detail-hero">
+        <div class="course-detail-left">
+            <h1><%= course.title %></h1>
+            <p><%= course.description %></p>
+            <p><strong>Duration:</strong><%= course.duration %></p>
+            <p><strong>Mode:</strong>Offline</p>
+        </div>
+        <div class="course-detail-right">
+            <img src="<%= course.courseImg %>" alt="Full Stack Development">
+        </div>
+    </div>
+
+    <!-- Syllabus Section -->
+    <div class="syllabus-section">
+        <h2>Syllabus</h2>
+        <ul>    
+            <% for(let i=0; i<course.syllabus.length; i++) { %> 
+                <li class="syllabus-topic"><i class="check-mark fa fa-check-circle"></i>&nbsp; <%= course.syllabus[i] %></li>
+            <% } %>
+        </ul>
+
+        <%- include("./brochure.ejs") %>
+    </div>
+
+    <!-- Course Highlights Section -->
+    <div class="course-highlights">
+        <div class="highlight-card">
+            <h5><i class="fa fa-briefcase"></i>&nbsp; 100% Placement Guarantee</h5>
+            <p>Guaranteed job placement after course completion with the support of our career services team and industry partners.</p>
+        </div>
+        <div class="highlight-card">
+            <h5><i class="fa fa-chalkboard-teacher"></i>&nbsp; Hands-On Learning</h5>
+            <p>Gain practical experience through real-world projects and build a portfolio that showcases your skills.</p>
+        </div>
+        <div class="highlight-card">
+            <h5><i class="fa fa-users"></i>&nbsp; Industry-Expert Instructors</h5>
+            <p>Learn from professionals with years of experience in web development and software engineering.</p>
+        </div>
+    </div>
+
+    <%- include("./certificate.ejs") %>
+
+    <!-- Enrollment Button -->
+    <div class="enroll-btn">
+        <button type="button">Enroll Now</button>
+    </div>
+</div>
+
+<%- include("../includes/footer.ejs") %>

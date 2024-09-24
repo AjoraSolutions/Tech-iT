@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pop up</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    /* styles.css */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+    }
+
+
+
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .popup {
+        /* display: none; */
+        /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    .popup-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 300px;
+        /* Could be more or less, depending on screen size */
+        border-radius: 10px;
+    }
+
+    .popup-content h2{
+        font-weight: 500;
+    }
+
+    .popup-content>form>label{
+        font-weight: 400;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button[type="submit"] {
+        margin-top: 15px;
+        background-color: #316dee;
+        transition: .2s all ease-in;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #083983;
+    }
+</style>
+
+<body>
+    
+
+    <div id="popupForm" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closeFormBtn">&times;</span>
+            <h2>Registration Form</h2>
+            <form id="registrationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="mobile">Mobile No:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="course">Select a Tech Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">--Select a Course--</option>
+                    <option value="data-analysis">Data Analysis</option>
+                    <option value="full-stack-development">Full Stack Development</option>
+                    <option value="ai-ml">AI/ML</option>
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="graphic-design">Graphic Design</option>
+                    <option value="website-design">Website Design</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // script.js
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const closeFormBtn = document.getElementById('closeFormBtn');
+    const popupForm = document.getElementById('popupForm');
+    
+
+    // Close the form
+    closeFormBtn.addEventListener('click', () => {
+        popupForm.style.display = "none";
+    });
+
+    // Close the form when clicking outside of it
+    window.addEventListener('click', (event) => {
+        if (event.target === popupForm) {
+            popupForm.style.display = 'none';
+        }
+    });
+
+    // Handle form submission
+    document.getElementById('registrationForm').addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission
+        alert('Form submitted successfully!');
+        popupForm.style.display = 'none'; // Close the form after submission
+    });
+});
+
+    </script>
+</body>
+
+</html>

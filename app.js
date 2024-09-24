@@ -23,10 +23,11 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 // MongoDB connection string from environment variables
-const dbURI = process.env.DB_URL;
+const dbURL = process.env.DB_URL;
 
 // Connect to MongoDB Atlas
-mongoose.connect(dbURI)
+
+mongoose.connect(dbURL)
     .then(() => {
         console.log('Connected to MongoDB Atlas');
         // Start the server once connected to MongoDB
@@ -38,6 +39,8 @@ mongoose.connect(dbURI)
 
 // Import the User model
 const User = require('./models/user');
+// Import the Course model
+const Course = require('./models/course');
 
 // Define routes
 
@@ -47,19 +50,33 @@ app.get("/", (req, res) => {
 });
 
 //  index route
-app.get('/index', (req, res) => {
-    res.render("index/index.ejs", { body: '' });
+app.get('/index', async(req, res) => {
+
+    let allCourses = await Course.find({});
+    res.render("index/index.ejs", { body: '', allCourses});
+});
+
+//  explore course route
+app.get('/explore/:id/course', async(req, res) => {
+
+    let { id } = req.params; // Correctly retrieving the id from req.params
+
+    let course = await Course.findById(id);
+    
+    res.render("courses/course.ejs", { body: '', course});
 });
 
 //  eplore courses route
-app.get('/explore/allCourses', (req, res) => {
-    // res.send('Home page');
-    res.render("courses/allCourses.ejs", { body: '' });
+app.get('/explore/allCourses', async(req, res) => {
+
+    let allCourses = await Course.find({});
+
+    res.render("courses/allCourses.ejs", { body: '', allCourses});
 });
 
 //about
 app.get('/about', (req, res) => {
-    // res.send('Home page');
+    
     res.render("about/aboutUs.ejs", { body: '' });
 });
 

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech-iT</title>
+
+    <link rel="stylesheet" href="./getInTouch.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.contact-us {
+    padding: 50px 0;
+    background-color: #cbd4df;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.contact-info h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #004aad; /* Matches Tech-it's blue logo */
+}
+
+.contact-info p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.contact-info p strong {
+    color: #004aad;
+    font-weight: 700;
+}
+
+.map {
+    flex: 1;
+    
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .contact-info h2 {
+        font-size: 2.5rem;
+    }
+
+    .map iframe {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .contact-info {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+
+    .map iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    .contact-info h2 {
+        font-size: 1.75rem;
+    }
+
+    .map iframe {
+        height: 200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .contact-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-info p {
+        font-size: 0.85rem;
+    }
+
+    .map iframe {
+        height: 180px;
+    }
+}
+
+
+@media (min-width: 650px) and (max-width: 1000px) {
+    /* Styles for devices with width between 650px and 1000px */
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-info h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .map iframe {
+        height: 280px;
+    }
+}
+
+
+</style>
+<body>
+
+    <section class="contact-us">
+        <div class="container">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p><strong>Email:</strong> info@techit.com</p>
+                <p><strong>Phone:</strong> +91 7718091657 <br> +91 8689960170</p>
+                <p><strong>Address:</strong> Mhatre Tower, Phadke Rd, near Hair Castle, Dombivli, Maharashtra 421201</p>
+            </div>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.4585244328637!2d73.0871461742555!3d19.218838447474752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7959123d51dd1%3A0xfa2f16e74f6d2c23!2sAjora!5e0!3m2!1sen!2sin!4v1727065069790!5m2!1sen!2sin"
+                    style="border:0;" allowfullscreen="" loading="lazy" width="600" height="250"></iframe>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+
+</html>
+
