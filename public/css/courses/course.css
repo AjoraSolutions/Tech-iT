@@ -107,6 +107,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.541);
 }
 
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .course-detail-hero {

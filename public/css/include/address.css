@@ -1,0 +1,147 @@
+.contact-us-box {
+    color: #333;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    padding: 50px 0;
+}
+
+.contact-us-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.contact-info h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #004aad; /* Matches Tech-it's blue logo */
+}
+
+.contact-info p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.contact-info p strong {
+    color: #004aad;
+    font-weight: 700;
+}
+
+.cont-map {
+    flex: 1;
+    align-self: flex-end;
+}
+
+.add-map {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 1024px) {
+    .contact-us-container {
+        flex-direction: column;
+        /* align-items: center; */
+    }
+
+    .contact-info h2 {
+        font-size: 2.5rem;
+    }
+
+    .cont-map iframe {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-us-container {
+        flex-direction: column;
+    }
+
+    .contact-info {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+
+    .cont-map iframe {
+        height: 250px;
+    }
+    .cont-map{
+        align-self: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    .contact-info h2 {
+        font-size: 1.75rem;
+    }
+
+    .cont-map iframe {
+        height: 200px;
+    }
+    .cont-map{
+        align-self: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .contact-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-info p {
+        font-size: 0.85rem;
+    }
+
+    .cont-map iframe {
+        height: 180px;
+    }
+    .cont-map{
+        align-self: center;
+    }
+}
+
+
+@media (min-width: 650px) and (max-width: 1000px) {
+    /* Styles for devices with width between 650px and 1000px */
+    .contact-us-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .cont-map iframe {
+        height: 280px;
+        width: 80vw;
+        
+    }
+    .cont-map{
+        align-self: center;
+    }
+}

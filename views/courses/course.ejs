@@ -46,8 +46,50 @@
 
     <!-- Enrollment Button -->
     <div class="enroll-btn">
-        <button type="button">Enroll Now</button>
+        <button type="button" id="enrollBtn">Enroll Now</button>
     </div>
-</div>
 
+
+    <!-- pop up -->
+     <!-- Brochure Form Popup -->
+    <div id="brochurePopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('brochurePopup')">&times;</button>
+            <div class="popup-header">Download Brochure</div>
+            <form class="popup-form" id="brochureForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="text" placeholder="Mobile Number" required>
+                <input type="email" placeholder="Email" required>
+                <button type="submit">Submit & Download</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enroll Now Form Popup -->
+    <div id="enrollPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('enrollPopup')">&times;</button>
+            <div class="popup-header">Enroll Now</div>
+            <form class="popup-form" id="enrollForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="text" placeholder="Mobile Number" required>
+                <input type="email" placeholder="Email" required>
+                <select class="popup-form-drop" required>
+                    <option value="" disabled selected>Select a Course</option>
+                    <option value="data-analysis">Data Analysis</option>
+                    <option value="full-stack">Full Stack Development</option>
+                    <option value="website-design">Website Design</option>
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="graphic-design">Graphic Design</option>
+                    <option value="accounting">Professional Accounting & MIS</option>
+                    <option value="ai-ml">AI/ML</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    
 <%- include("../includes/footer.ejs") %>
+
+<script src="/js/enrollBrochure.js"></script>
