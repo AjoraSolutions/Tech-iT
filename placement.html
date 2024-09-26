@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            height:100%;
+            background-color: rgb(6, 20, 51);
+    
+            padding:10px; 
+            background-image: url('./bg.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+        }
+        h1{
+            color:aliceblue;
+            text-align:center;
+            padding-top:40px;
+        }
+        .cards{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            margin-top: -8vh;
+            justify-content: flex;
+        }
+        .card{ 
+            width:10vw;
+            margin:0.5rem;
+            background-color: white;
+            padding:1rem;
+            border-radius: 5px;
+        }
+        .card:hover{
+            background-color: rgb(5, 62, 116);
+            color:aliceblue;
+            transition: .3s all ease-in;
+        }
+        .card-top{
+            transform: translateY(-40px); 
+        }
+        .card-bottom{
+            transform: translateY(40px);
+        }
+        .number{
+            font-size:35px;
+            font-weight:bolder;
+        }
+        .card:hover .number{
+            color:greenyellow;
+        }
+        .heading2{
+            margin-top:1rem;
+            font-size:1.5rem;
+        }
+        .para{
+            margin-top:0.3rem;
+            line-height: 1.1rem;
+            font-weight:600;
+            opacity: 0.7;
+        }
+        .img-num{
+        display:flex;
+        justify-content: space-between;
+        }
+        .img{
+        background-color: rgb(177, 212, 228);
+        border-radius: 50px;
+        height:60px;
+        width:60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .card:hover .fa-graduation-cap{
+        color:black;
+        }
+        .card:hover .fa-address-card{
+        color:black;
+        }
+        .card:hover .fa-folder-closed{
+        color:black;
+        }
+        .card:hover .fa-briefcase{
+        color:black;
+        }
+        .card:hover .fa-user-tie{
+        color:black;
+        }
+        .card:hover .fa-person-chalkboard{
+        color:black;
+        }
+        @media (max-width: 1200px) {
+            .container{
+                overflow-y: scroll;
+
+            }
+            .cards{
+                flex-wrap: wrap;
+            }
+            .card {
+                width: 20vw; /* Adjust card width for medium screens */
+            }
+            .card-top{
+            transform:none; 
+            }
+            .card-bottom{
+            transform:none;
+            }
+            h1{
+                margin:1rem 0 8rem 0;
+            }
+            }
+        @media (max-width: 800px) {
+            .container{
+                overflow-y: scroll;
+
+            }
+            .cards{
+                flex-wrap: wrap;
+            }
+            .card {
+                width: 40vw; /* Adjust card width for smaller screens */
+            }
+            .card-top{
+            transform:none; 
+            }
+            .card-bottom{
+            transform:none;
+            }
+            h1{
+                margin:1rem 0 8rem 0;
+            }
+        }
+        @media (max-width: 500px) {
+            .container{
+                overflow-y: scroll;
+
+            }
+            .cards{
+                flex-wrap: wrap;
+            
+            }
+            .card {
+                width: 80vw; /* Full width on mobile */
+            }
+            h1 {
+                font-size: 1.5em; /* Adjust heading2 size for mobile */
+                margin:1rem 0 8rem 0;
+            }
+            .card-top{
+            transform:none; 
+            }
+            .card-bottom{
+            transform:none;
+            }
+        }
+          .heading1{
+            text-align:center;
+          }
+          .text-cap{
+            font-size:16px;
+          }
+          h2{
+            font-size: 35px;
+            margin:10px 0px 18px 0px;
+          }
+          .cormorant-garamond-light {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 700;
+            font-style: normal;
+            }
+    </style>
+</head>
+<body>
+    <div class="heading1">
+        <span class="text-cap  cormorant-garamond-light">A STRUCTURED PATH TO SUCCESS</span>
+        <h2 class="cormorant-garamond-light">to ensure a 100% placement rate for our students</h2>
+    </div>
+
+
+
+    <div class="container">
+    <h1>Here's How Our Course Will Help You Get Your Dream Job</h1>
+    <div class="cards">
+
+        <div class="card card-top">
+            <div class="upper-sec">
+                <div class="img-num">
+               <div class="img">
+                <i class="fa-solid fa-graduation-cap fa-2xl"></i>
+               </div>
+               <div class="number">01</div>
+               </div>
+                <h2 class="heading2">Career Advice</h2>
+                <p class="para">A dedicated career expert will guide you by putting light on which course to select based on your interests and qualifications. At Tech-it, we provide our students with an interesting syllabus for our IT Courses.</p>
+            </div>
+        </div>
+
+        <div class="card card-bottom">
+            <div class="upper-sec">
+                <div class="img-num">
+                    <div class="img">
+                        <i class="fa-regular fa-address-card fa-2xl"></i>
+                    </div>
+                    <div class="number">02</div>
+                    </div>
+                <h2 class="heading2">Enrollment</h2>
+                <p class="para">Once you enroll in the course, a dedicated Relationships Manager will be provided to support you throughout the course completion period.</p>
+            </div>
+        </div>
+
+        <div class="card card-top">
+            <div class="upper-sec">
+                <div class="img-num">
+                    <div class="img">
+                        <i class="fa-solid fa-person-chalkboard fa-2xl"></i>
+                    </div>
+                    <div class="number">03</div>
+                    </div>
+                <h2 class="heading2">Follow the 3A Rule</h2>
+                <p class="para">3A (Attendance, Assignment & Assessment) is a learning model designed by us where student have to score minimum 90%</p>
+            </div>
+        </div>
+
+        <div class="card card-bottom">
+            <div class="upper-sec">
+                <div class="img-num">
+                    <div class="img">
+                        <i class="fa-solid fa-folder-closed fa-2xl"></i>
+                    </div>
+                    <div class="number">04</div>
+                    </div>
+                <h2 class="heading2">Projects</h2>
+                <p class="para">Being one of the most desired IT Training Institutes, we provide our students with 30+ Industry oriented projects and case studies to make our students Industry-ready professionals.</p>
+            </div>
+        </div>
+
+        <div class="card card-top">
+            <div class="upper-sec">
+                <div class="img-num">
+                    <div class="img">
+                        <i class="fa-solid fa-user-tie fa-2xl"></i>
+                    </div>
+                    <div class="number">05</div>
+                    </div>
+                <h2 class="heading2">Interviews</h2>
+                <p class="para">A total of 150+ mocks are planned for each student to prepare them for technical interviews.</p>
+            </div>
+        </div>
+
+        <div class="card card-bottom">
+            <div class="upper-sec">
+                <div class="img-num">
+                    <div class="img">
+                        <i class="fa-solid fa-briefcase fa-2xl"></i>
+                    </div>
+                    <div class="number">06</div>
+                    </div>
+                <h2 class="heading2">Job</h2>
+                <p class="para" >Tech-it being a trustworthy Software Training Institute, starts working on the interviews for the students’ placements soon after their course completion.</p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</body>
+</html>
