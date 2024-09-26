@@ -1,9 +1,20 @@
+require('dotenv').config(); // Load environment variables from .env file
 // Import required modules
+
 const express = require('express');
 const path = require('path'); // Import the path module for handling file paths
 const ejsMate = require('ejs-mate'); // Import ejs-mate for enhanced EJS support
 const mongoose = require('mongoose');
-require('dotenv').config(); // Load environment variables from .env file
+const session = require("express-session");
+const flash = require("connect-flash");
+
+const ExpressError = require("./utils/ExpressError.js");
+const wrapAsync = require("./utils/wrapAsync.js");
+
+const indexRouter = require("./routes/index.js");
+const coursesRouter = require("./routes/courses.js");
+const aboutRouter = require("./routes/about.js");
+
 
 // Create an instance of Express
 const app = express();
@@ -37,76 +48,43 @@ mongoose.connect(dbURL)
     })
     .catch((err) => console.log(err));
 
-// Import the User model
-const User = require('./models/user');
-// Import the Course model
 const Course = require('./models/course');
+
+const sessionOptions = {
+    secret : process.env.SECRET,
+    resave : false,
+    saveUninitialized : true,
+}
+
+app.use(session(sessionOptions));
+app.use(flash());
+
+// Make flash messages available in response locals
+app.use((req, res, next) => {
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();
+});
 
 // Define routes
 
-// Home page route
-app.get("/", (req, res) => {
-    res.send("Home Page");
+app.get('/', (req, res) => {
+    res.redirect('/index'); // Redirect to the index page or render a home page
 });
-
 //  index route
-app.get('/index', async(req, res) => {
-
-    let allCourses = await Course.find({});
-    res.render("index/index.ejs", { body: '', allCourses});
-});
+app.use("/index", indexRouter);
 
 //  explore course route
-app.get('/explore/:id/course', async(req, res) => {
-
-    let { id } = req.params; // Correctly retrieving the id from req.params
-
-    let course = await Course.findById(id);
-    
-    res.render("courses/course.ejs", { body: '', course});
-});
-
-//  eplore courses route
-app.get('/explore/allCourses', async(req, res) => {
-
-    let allCourses = await Course.find({});
-
-    res.render("courses/allCourses.ejs", { body: '', allCourses});
-});
+app.use('/explore', coursesRouter);
 
 //about
-app.get('/about', (req, res) => {
+app.use('/about', aboutRouter);
+
+app.use( (err, req,res, next) => {
     
-    res.render("about/aboutUs.ejs", { body: '' });
+    let {status = 404, message = "Something went WRONG!"} = err;
+    // res.status(status).send(message);
+    res.status(status).render("courses/error.ejs", {body : "" ,message});
 });
 
 
-// Route to display the signup form
-app.get('/student/signup', (req, res) => {
-    res.render('user/signup'); // Render the signup view from the "views/user" directory
-});
-
-// Route to handle signup form submission
-app.post('/student/signup', async (req, res) => {
-    try {
-        const { username, email, password } = req.body;
-        const newUser = new User({ username, email, password });
-        const registeredUser = await newUser.save();
-        console.log(registeredUser);
-        res.send(`Welcome, ${username}`);
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Error signing up');
-    }
-});
-
-// Route to display the login form
-app.get('/student/login', (req, res) => {
-    res.render('user/login'); // Render the login view from the "views/user" directory
-});
-
-// Route to handle login form submission
-app.post('/student/login', (req, res) => {
-    const { username, password } = req.body;
-    res.send(`Welcome back, ${username}!`);
-});
