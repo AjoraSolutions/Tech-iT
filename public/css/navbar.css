@@ -18,8 +18,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(75deg, rgba(9, 32, 231, 1) 33%, rgba(23, 38, 168, 0.742734593837535) 100%);
-    padding: 1rem;
+    background: linear-gradient(75deg, rgba(9, 32, 231, 1) 33%, rgba(21, 35, 231, 0.743) 100%);
+    padding: 1rem 5rem;
     box-shadow: -1px 21px 19px -1px rgba(0, 0, 0, 0.32);
 }
 
@@ -37,7 +37,7 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 1rem;
     transition: .5s all ease;
 
@@ -325,9 +325,9 @@ nav ul li a:hover {
 /* Desktops and above */
 @media (min-width: 1024px) {
 
-    nav {
-        justify-content: space-around;
-    }
+    /* nav {
+        justify-content: space-between;
+    } */
 
     .hero-section {
         gap: 8rem;

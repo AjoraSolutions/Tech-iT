@@ -1,7 +1,7 @@
 <div class="contact-us">
 
     <div class="cont-head">
-        <p>Contact Our Team</p>
+        <p>Get in Touch</p>
         <h2>Got Any Questions?</h2>
     </div>
 
@@ -12,7 +12,7 @@
                 <span><i class="fa-brands fa-whatsapp fa-2xl"></i></span>
                 <h6 class="cont-card-title card-title">Have Questions? <br> Chat with Us on WhatsApp!</h6>
                 <p class="cont-msg">We're here to assist you! Whether you have questions about our tech courses, 100% placement guarantee, or anything else, feel free to reach out. Start a conversation with our team and get instant responses.</p>
-                <a href="#" class="cont-btn btn mt-2 rounded-pill">Chat Now on WhatsApp</a>
+                <a href="https://wa.me/7718091657" class="cont-btn btn mt-2 rounded-pill">Chat Now on WhatsApp</a>
             </div>
         </div>
 
@@ -47,32 +47,88 @@
     <h4 id="modalTitle">Fill in your details</h4>
 
     <!-- Call Back Form -->
-    <form id="callBackForm" class="modal-form">
+    <form id="callBackForm" class="modal-form" action="https://api.web3forms.com/submit" method="post">
+        <input type="hidden" name="access_key" value="c4af8459-b50d-4d7b-a118-c20e61cc663a">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
         <div class="mb-3">
             <label for="callBackName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="callBackName" placeholder="Your Name">
+            <input type="text" class="form-control" name="name" id="callBackName" placeholder="Your Name">
         </div>
         <div class="mb-3">
             <label for="callBackPhone" class="form-label">Phone</label>
-            <input type="text" class="form-control" id="callBackPhone" placeholder="Your Phone Number">
+            <input type="number" class="form-control" name="number" id="callBackPhone" placeholder="Your Phone Number">
         </div>
         <button type="submit" class="btn btn-primary rounded-pill">Submit</button>
     </form>
 
     <!-- Book Appointment Form -->
-    <form id="appointmentForm" class="modal-form">
+    <form id="appointmentForm" class="modal-form" action="https://api.web3forms.com/submit" method="post">
+        <input type="hidden" name="access_key" value="c4af8459-b50d-4d7b-a118-c20e61cc663a">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
         <div class="mb-3">
             <label for="appointmentName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="appointmentName" placeholder="Your Name">
+            <input type="text" class="form-control" name="name" id="appointmentName" placeholder="Your Name">
         </div>
         <div class="mb-3">
             <label for="appointmentPhone" class="form-label">Phone</label>
-            <input type="text" class="form-control" id="appointmentPhone" placeholder="Your Phone Number">
+            <input type="number" class="form-control" name="number"  id="appointmentPhone" placeholder="Your Phone Number">
         </div>
         <div class="mb-3">
             <label for="appointmentDate" class="form-label">Preferred Date</label>
-            <input type="date" class="form-control" id="appointmentDate">
+            <input type="date" class="form-control" name="date" id="appointmentDate">
         </div>
         <button type="submit" class="btn btn-primary rounded-pill">Submit</button>
     </form>
-</div>
+</div> 
+
+<script>
+    document.getElementById('callBackForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(this); // Create a FormData object
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json()) // Parse JSON response
+        .then(data => {
+            if (data.success) {
+                alert("Thank you! We'll get back you soon!"); // Success message
+                // Optionally, you can clear the form fields or perform other actions here
+                this.reset(); // Reset form fields
+            } else {
+                alert('Submission failed: Please try again'); // Error message
+            }
+        })
+        .catch(error => {
+            alert('An error occurred: Please try again'); // Handle fetch error
+        });
+    });
+
+    document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(this); // Create a FormData object
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json()) // Parse JSON response
+        .then(data => {
+            if (data.success) {
+                alert("Thank you!, we'll get back you soon! "); // Success message
+                // Optionally, you can clear the form fields or perform other actions here
+                this.reset(); // Reset form fields
+            } else {
+                alert('Submission failed: Please try again'); // Error message
+            }
+        })
+        .catch(error => {
+            alert('An error occurred: Please try again'); // Handle fetch error
+        });
+    });
+</script>

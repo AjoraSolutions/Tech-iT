@@ -56,10 +56,17 @@
         <div class="popup-content">
             <button class="close-btn" onclick="closePopup('brochurePopup')">&times;</button>
             <div class="popup-header">Download Brochure</div>
-            <form class="popup-form" id="brochureForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="text" placeholder="Mobile Number" required>
-                <input type="email" placeholder="Email" required>
+            <form class="popup-form" id="brochureForm" action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="c4af8459-b50d-4d7b-a118-c20e61cc663a">
+         
+
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="text" name="phone" placeholder="Mobile Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                 <button type="submit">Submit & Download</button>
             </form>
         </div>
@@ -70,11 +77,15 @@
         <div class="popup-content">
             <button class="close-btn" onclick="closePopup('enrollPopup')">&times;</button>
             <div class="popup-header">Enroll Now</div>
-            <form class="popup-form" id="enrollForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="text" placeholder="Mobile Number" required>
-                <input type="email" placeholder="Email" required>
-                <select class="popup-form-drop" required>
+            <form class="popup-form" id="enrollForm" action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="c4af8459-b50d-4d7b-a118-c20e61cc663a">
+                
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="number" name="phone" placeholder="Mobile Number" required>
+                <input type="text" name="city" placeholder="Your City" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <select class="popup-form-drop" name="course" required>
                     <option value="" disabled selected>Select a Course</option>
                     <option value="data-analysis">Data Analysis</option>
                     <option value="full-stack">Full Stack Development</option>
@@ -84,6 +95,9 @@
                     <option value="accounting">Professional Accounting & MIS</option>
                     <option value="ai-ml">AI/ML</option>
                 </select>
+
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                 <button type="submit">Submit</button>
             </form>
         </div>
@@ -93,3 +107,52 @@
 <%- include("../includes/footer.ejs") %>
 
 <script src="/js/enrollBrochure.js"></script>
+<script>
+    document.getElementById('brochureForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(this); // Create a FormData object
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json()) // Parse JSON response
+        .then(data => {
+            if (data.success) {
+                alert('Thank you! Brochure is downloaded.'); // Success message
+                // Optionally, you can clear the form fields or perform other actions here
+                this.reset(); // Reset form fields
+            } else {
+                alert('Submission failed: Please try again'); // Error message
+            }
+        })
+        .catch(error => {
+            alert('An error occurred: Please try again'); // Handle fetch error
+        });
+    });
+
+    document.getElementById('enrollForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(this); // Create a FormData object
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json()) // Parse JSON response
+        .then(data => {
+            if (data.success) {
+                alert("Thank you for enrolling!, we'll get back you soon! "); // Success message
+                // Optionally, you can clear the form fields or perform other actions here
+                this.reset(); // Reset form fields
+            } else {
+                alert('Submission failed: Please try again'); // Error message
+            }
+        })
+        .catch(error => {
+            alert('An error occurred: Please try again'); // Handle fetch error
+        });
+    });
+</script>

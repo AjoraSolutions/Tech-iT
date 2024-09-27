@@ -15,8 +15,8 @@ function closePopup(popupId) {
 
 // Handle brochure form submission
 document.getElementById('brochureForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Thank you! Your brochure will now download.');
+    // e.preventDefault();
+    // alert('Thank you! Your brochure will now download.');
     closePopup('brochurePopup');
 
     // Simulate PDF download
@@ -30,7 +30,7 @@ document.getElementById('brochureForm').addEventListener('submit', function (e) 
 
 // Handle enroll form submission
 document.getElementById('enrollForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Thank you for enrolling!');
+    // e.preventDefault();
+    // alert('Thank you for enrolling!');
     closePopup('enrollPopup');
 });
