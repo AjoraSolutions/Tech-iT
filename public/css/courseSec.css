@@ -14,6 +14,7 @@
     margin-bottom: 20px; 
 }
 .viewMore-btn{
+    margin: 1rem;
   padding: 0.5rem 2rem;
   font-size: 1.2rem;
   font-weight: 600;
@@ -21,8 +22,8 @@
 
 
 /* Customizing the Carousel */
-#carouselExampleIndicators {
-    max-width: 80%; 
+#carouselDesktop {
+    max-width: 90%; 
     margin: 0 auto;  
 }
 .carousel-item {
@@ -31,7 +32,7 @@
 
 /* Styling the Cards */
 .landing-course-card{
-    /* max-width: 80%; */
+    height: 400px;
     transition: transform 0.3s ease;
 }
 .landing-course-card:hover {
@@ -87,4 +88,16 @@
     margin: auto;
     background-color: black;
     border-radius: 10px;
+}
+
+.hide{
+    display: none;
+}
+
+.text-right{
+    position: relative;
+}
+
+.text-right button{
+    bottom: 5px;
 }

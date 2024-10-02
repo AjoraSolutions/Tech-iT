@@ -5,7 +5,7 @@
     justify-content: space-around;
     align-items: center;
     height: auto;
-    padding: 52px;
+    padding: 0 52px;
     flex-wrap: wrap;
 }
 

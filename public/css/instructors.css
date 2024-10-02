@@ -1,11 +1,14 @@
-body {
+/* body {
     margin: 0;
     font-family: Arial, sans-serif;
-}
+    
+} */
 
 .inst-info {
-    padding: 20px;
+    padding: 50px;
+    margin: 0 52px;
     text-align: center;
+    background-color: #bbdefb23;
 }
 
 .inst-msg {
@@ -14,7 +17,8 @@ body {
 }
 
 .inst-info h1 {
-    color: rgb(29, 29, 42);
+    color: #001845;
+    font-weight: 700;
     font-size: 2.5rem;
 }
 

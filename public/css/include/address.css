@@ -23,7 +23,7 @@
     font-size: 3rem;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #004aad; /* Matches Tech-it's blue logo */
+    color: #001845; /* Matches Tech-it's blue logo */
 }
 
 .contact-info p {
@@ -34,7 +34,7 @@
 }
 
 .contact-info p strong {
-    color: #004aad;
+    color: #001845;
     font-weight: 700;
 }
 

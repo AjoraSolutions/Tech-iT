@@ -1,53 +1,328 @@
+
 <div class="landing-courses-sec container mt-5">
 
-    <div class="card-heading-section text-left"></div>
+    <div class="card-heading-section text-left">
       <h1 class="heading-title border-bottom pb-2">Explore Our Courses</h1>
     </div>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselDesktop" class="carousel slide for-desktop" data-bs-ride="carousel">
       <!-- Carousel Items -->
-        <div class="carousel-inner">
+        <div class="carousel-inner ">
 
-            <% const itemsPerSlide = 3; %>
-            <% const totalSlides = Math.ceil(allCourses.length / itemsPerSlide); %>
-            
-            <% for (let slideIndex = 0; slideIndex < totalSlides; slideIndex++) { %>
-                <div class="carousel-item <%= slideIndex === 0 ? 'active' : '' %>">
-                    <div class="d-flex justify-content-center">
-                        <% for (let cardIndex = 0; cardIndex < itemsPerSlide; cardIndex++) { %>
-                            <% const currentIndex = slideIndex * itemsPerSlide + cardIndex; %>
-                            <% if (currentIndex < allCourses.length) { %>
-                                <div class="card-wrapper">
-                                    <div class="landing-course-card card h-100 shadow">
-                                        <img src="<%= allCourses[currentIndex].courseImg %>" class="card-img-top" alt="<%= allCourses[currentIndex].title %>">
-                                        <div class="card-body">
-                                            <h2 class="card-title text-primary fs-4"><%= allCourses[currentIndex].title %></h2>
-                                            <p class="card-text"><%= allCourses[currentIndex].tagline %></p>
-                                            <div class="text-right">
-                                                <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[currentIndex]._id %>/course'">Explore</button>
-                                            </div>
-                                        </div>
-                                    </div>
+            <!-- slide 1 -->
+            <div class="carousel-item active">
+          
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[0].courseImg %>" class="card-img-top" alt="<%= allCourses[0].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[0].title %></h2>
+                                <p class="card-text"><%= allCourses[0].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[0]._id %>/course'">Explore</button>
                                 </div>
-                            <% } %>
-                        <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[1].courseImg %>" class="card-img-top" alt="<%= allCourses[1].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[1].title %></h2>
+                                <p class="card-text"><%= allCourses[1].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[1]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[2].courseImg %>" class="card-img-top" alt="<%= allCourses[2].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[2].title %></h2>
+                                <p class="card-text"><%= allCourses[2].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[2]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <!-- slide 2 -->
+            <div class="carousel-item ">
+
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[3].courseImg %>" class="card-img-top" alt="<%= allCourses[3].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[3].title %></h2>
+                                <p class="card-text"><%= allCourses[3].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[3]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[4].courseImg %>" class="card-img-top" alt="<%= allCourses[4].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[4].title %></h2>
+                                <p class="card-text"><%= allCourses[4].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[4]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[5].courseImg %>" class="card-img-top" alt="<%= allCourses[5].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[5].title %></h2>
+                                <p class="card-text"><%= allCourses[5].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[5]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <!-- slide 3 -->
+            <div class="carousel-item">
+
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[6].courseImg %>" class="card-img-top" alt="<%= allCourses[6].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[6].title %></h2>
+                                <p class="card-text"><%= allCourses[6].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[6]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[7].courseImg %>" class="card-img-top" alt="<%= allCourses[7].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[7].title %></h2>
+                                <p class="card-text"><%= allCourses[7].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[7]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            <% } %>
+            </div>
 
-        </div>
-        <div class="carousel-controls">
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+            <div class="carousel-controls">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDesktop" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselDesktop" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </div>
 
+    <!-- for mobile -->
+
+    <div id="carouselMobile" class="carousel slide for-mobile" data-bs-ride="carousel">
+    <!-- Carousel Items -->
+        <div class="carousel-inner">
+
+            <!-- slide 1 -->
+            <div class="carousel-item active">
+        
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[0].courseImg %>" class="card-img-top" alt="<%= allCourses[0].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[0].title %></h2>
+                                <p class="card-text"><%= allCourses[0].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[0]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+
+             <!-- slide 2 -->
+             <div class="carousel-item">
+        
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[1].courseImg %>" class="card-img-top" alt="<%= allCourses[1].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[1].title %></h2>
+                                <p class="card-text"><%= allCourses[1].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[1]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+
+            <!-- slide 3 -->
+            <div class="carousel-item ">
+
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[2].courseImg %>" class="card-img-top" alt="<%= allCourses[2].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[2].title %></h2>
+                                <p class="card-text"><%= allCourses[2].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[2]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+
+            <!-- slide 4 -->
+            <div class="carousel-item">
+
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[3].courseImg %>" class="card-img-top" alt="<%= allCourses[3].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[3].title %></h2>
+                                <p class="card-text"><%= allCourses[3].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[3]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- slide 5 -->
+            <div class="carousel-item">
+
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[4].courseImg %>" class="card-img-top" alt="<%= allCourses[4].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[4].title %></h2>
+                                <p class="card-text"><%= allCourses[4].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[4]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- slide 6 -->
+            <div class="carousel-item">
+
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[5].courseImg %>" class="card-img-top" alt="<%= allCourses[5].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[5].title %></h2>
+                                <p class="card-text"><%= allCourses[5].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[5]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- slide 7 -->
+            <div class="carousel-item">
+
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[6].courseImg %>" class="card-img-top" alt="<%= allCourses[6].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[6].title %></h2>
+                                <p class="card-text"><%= allCourses[6].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[6]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- slide 8 -->
+            <div class="carousel-item">
+
+                <div class="d-flex justify-content-center">
+
+                    <div class="card-wrapper">
+                        <div class="landing-course-card card shadow">
+                            <img src="<%= allCourses[7].courseImg %>" class="card-img-top" alt="<%= allCourses[7].title %>">
+                            <div class="card-body">
+                                <h2 class="card-title text-primary fs-4"><%= allCourses[7].title %></h2>
+                                <p class="card-text"><%= allCourses[7].tagline %></p>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" onclick="window.location.href='/explore/<%= allCourses[7]._id %>/course'">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselMobile" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselMobile" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
     <!-- Carousel Controls Outside -->
     
 
@@ -56,3 +331,46 @@
     </div>
 
 </div>
+<script>
+
+    function updateDisplay() {
+
+        let forMobile = document.getElementsByClassName("for-mobile");
+        let forDesktop = document.getElementsByClassName("for-desktop");
+
+        let screen = window.innerWidth;
+
+        if (screen <= 768) {
+            for (let i = 0; i < forMobile.length; i++) {
+                if (forMobile[i].classList.contains("hide")) {
+                    forMobile[i].classList.remove("hide");
+                }
+            }
+
+            for (let i = 0; i < forDesktop.length; i++) {
+                if (!forDesktop[i].classList.contains("hide")) {
+                    forDesktop[i].classList.add("hide");
+                }
+            }
+        } else {
+            for (let i = 0; i < forMobile.length; i++) {
+                if (!forMobile[i].classList.contains("hide")) {
+                    forMobile[i].classList.add("hide");
+                }
+            }
+
+            for (let i = 0; i < forDesktop.length; i++) {
+                if (forDesktop[i].classList.contains("hide")) {
+                    forDesktop[i].classList.remove("hide");
+                }
+            }
+        }
+    }
+
+    // Run on page load
+    updateDisplay();
+
+    window.addEventListener('load', updateDisplay);
+    window.addEventListener('resize', updateDisplay);
+
+</script>

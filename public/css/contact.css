@@ -1,7 +1,8 @@
 .contact-us {
-    background: linear-gradient(120deg, #031a29b0, #061e36be);
+    background: linear-gradient(120deg, #023E7D, #01162bbe);
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color:#ffffff;
+    /* margin: 0 3.5rem; */
     padding: 4rem;
     text-align: center;
 }

@@ -5,6 +5,9 @@
     margin-bottom: 1.5rem;
     padding: 1rem;
   }
+ 
   .aboutUs{
-    background-color: #58c2ff70;
+    border-radius: 5px;
+    margin:  52px;
+    background-color: #BBDEFB;
   }

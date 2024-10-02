@@ -255,6 +255,10 @@ nav ul li a:hover {
     .more-info-card-container>.card>.img svg {
         width: 2rem;
     }
+
+    nav{
+        padding: 1rem 2rem;
+    }
 }
 
 

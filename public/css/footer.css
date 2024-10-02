@@ -1,5 +1,6 @@
 .foot{
     background-color: rgb(5, 65, 114);
+    margin-top: 3rem;
 }
 .foot-logo{
     display: flex;

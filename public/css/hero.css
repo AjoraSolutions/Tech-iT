@@ -25,12 +25,12 @@
 .left-section h1 {
     font-size: 2.5rem;
     font-weight: 500;
-    color: #eaeaeb;
+    color: #ffffff;
     line-height: 3rem;
 }
 
 .left-section p {
-    color: #afa3a3;
+    opacity: 0.9;
     font-weight: 400;
     margin-top: 1rem;
 }
@@ -47,7 +47,7 @@
 
 .head-exp-btn {
     padding: 10px 20px;
-    background-color: rgb(228, 229, 240);
+    background-color: white;
     font-weight: 400;
     color: #070707;
     outline: none;
@@ -82,7 +82,7 @@
 
 .more-info {
     min-height: 50vh;
-    color: black;
+    color: #001845;
     text-align: center;
     margin-top: 4rem;
     padding: 1rem;
@@ -97,7 +97,7 @@
 
 .more-info-para p {
     font-weight: 400;
-    color: gray;
+    opacity: 0.8;
 }
 
 .more-info-card-container {

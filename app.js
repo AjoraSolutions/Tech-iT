@@ -49,7 +49,10 @@ mongoose.connect(dbURL)
             console.log('Server is listening on port 3000');
         });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+        console.log(err);
+        req.flash('error', 'Something went wrong, try again later');
+    });
 
 const Course = require('./models/course');
 
