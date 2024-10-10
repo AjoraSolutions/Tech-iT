@@ -1,6 +1,7 @@
 /* Card Heading Section */
 .card-heading-section {
-    margin-bottom: 40px; 
+    margin: 50px 0; 
+    padding-top: 52px;
     text-align: left; 
 }
 
@@ -92,10 +93,6 @@
 
 .hide{
     display: none;
-}
-
-.text-right{
-    position: relative;
 }
 
 .text-right button{

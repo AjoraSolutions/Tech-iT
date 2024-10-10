@@ -1,0 +1,35 @@
+.job-post-page {
+    background-color: #f4f7fc;
+    font-family: Arial, sans-serif;
+  }
+  .job-post-form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+  }
+  .job-post-form h1 {
+    color: #001741;
+    font-weight: bold;
+  }
+  .job-form-select, .job-form-inp, .job-form-textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #2b5876;
+  }
+
+  .invalid-feedback {
+    font-size: 0.875rem;
+  }
+  @media (max-width: 768px) {
+    .job-post-form {
+      width: 100%;
+      padding: 20px;
+    }
+    .two-fields {
+      margin-bottom: 10px;
+    }
+  }

@@ -1,11 +1,13 @@
-const mongoose = require("mongoose");
 require('dotenv').config();
+
+const mongoose = require("mongoose");
 const Course = require("../models/course.js");
 
 const initData = require("./courses.js");
 
 // MongoDB connection string from environment variables
-const dbURL = "mongodb+srv://ajorasolution:ZQnQCDFz1TOr32TR@cluster0.qpqpe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+// console.log("Mongo URL:", process.env.DB_URL);
+const dbURL = 'mongodb+srv://ajorasolution:ZQnQCDFz1TOr32TR@cluster0.qpqpe.mongodb.net/TechIT?retryWrites=true&w=majority&appName=Cluster0'
 
 // Connect to MongoDB Atlas
 async function main() {

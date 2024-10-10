@@ -1,0 +1,204 @@
+<%- include("../layout/jobBoiler.ejs") %>
+<div class="job-post-page py-5">
+
+    <div class="container job-post-form my-5 mx-auto w-75">
+
+      <div class="row">
+        <h1 class="mb-5 py-3 border-bottom">New Job Post</h1>
+    
+      <form id="jobPostForm" class="needs-validation" method="POST" action="newJobPost" novalidate ">
+        
+        <!-- Job Title -->
+        <div class="mb-4">
+          <label for="jobTitle" class="form-label fs-6 fw-semibold">Job Title</label>
+          <input type="text" class="form-control job-form-inp" id="jobTitle" name="job[title]" placeholder="Enter job title" required>
+          <div class="invalid-feedback">Please provide a job title.</div>
+        </div>
+        
+        <!-- Job Description -->
+        <div class="mb-4">
+          <label for="jobDescription" class="form-label fs-6 fw-semibold">Job Description</label>
+          <textarea class="form-control job-form-textarea" id="jobDescription" name="job[description]" minlength="30" rows="4" placeholder="Job description (minimum 30 words)" required></textarea>
+          <div class="invalid-feedback">Please provide a job description(minimum 30 words).</div>
+        </div>
+    
+        <!-- Job Category -->
+        <div class="mb-4">
+            
+          <div class="row">
+              <div class="col">
+                <label for="jobCategory" class="form-label fs-6 fw-semibold">Job Category</label>
+                <select class="form-select job-form-select" id="jobCategory"  name="job[category]" required>
+                    <option value=""   disabled selected>Select job category</option>
+                    <option value="software">Software Development</option>
+                    <option value="data" >Data Science</option>
+                    <option value="design" >Design</option>
+                    <option value="marketing" >Marketing</option>
+                    <option value="finance" >Finance & Accounting</option>
+                    <option value="sales" >Sales</option>
+                    <option value="hr">Human Resources</option>
+                    <option value="it" >IT & Support</option>
+                </select>
+              </div>
+
+              <div class="col">
+                <label for="workMode" class="form-label fs-6 fw-semibold">Job Category</label>
+                <select class="form-select job-form-select" id="workMode"  name="job[workMode]" required>
+                    <option value=""   disabled selected>Select Work Mode</option>
+                    <option value="On-Site">On-Site</option>
+                    <option value="Remote" >Remote</option>
+                    <option value="Hybrid" >Hybrid</option>
+                </select>
+              </div>
+          </div>
+        </div>
+      
+    
+        <div class="mb-4">
+            <div class="row">
+    
+                <!-- Experience Level -->
+                    <div class="col two-fields">
+                        <label for="experienceLevel" class="form-label fs-6 fw-semibold">Experience Level</label>
+                        <select class="form-select job-form-select" id="experienceLevel"  name="job[experienceLevel]" required>
+                            <option value=""  disabled selected>Select experience level</option>
+                            <option value="intern" >Intern</option>
+                            <option value="junior" >Fresher</option>
+                            <option value="mid">1 - 2 years</option>
+                            <option value="senior" >2 - 5 years</option>
+                            <option value="lead" >5+ years</option>
+                        </select>
+                        <div class="invalid-feedback">Please select an experience level.</div>
+                    </div>
+    
+                    <!-- Employment Type -->
+                    <div class="col two-fields">
+                        <label for="employmentType" class="form-label fs-6 fw-semibold">Employment Type</label>
+                        <select class="form-select job-form-select" id="employmentType" name="job[employmentType]"  required>
+                        <option selected disabled value=""  >Choose...</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Contract">Contract</option>
+                        <option value="Internship">Internship</option>
+                        <option value="Freelance">Freelance</option>
+                        </select>
+                        <div class="invalid-feedback">Please select an employment type.</div>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <!-- Job Location -->
+        <div class="mb-4">
+          <label for="jobLocation" class="form-label fs-6 fw-semibold">Job Location</label> <br>
+    
+          <div class="row">
+    
+            <div class="col two-fields">
+                <label for="state" class="form-label  fw-semibold"><small>State</small></label>
+                <input type="text" class="form-control job-form-inp" id="state" name="job[state]" placeholder="Enter state" required>
+                <div class="invalid-feedback">Please provide a State.</div>
+            </div>
+      
+            <div class="col two-fields">
+                <label for="city" class="form-label  fw-semibold"><small>City</small></label>
+                <input type="text" class="form-control job-form-inp" id="city" name="job[city]" placeholder="Enter city" required>
+                <div class="invalid-feedback">Please provide a City.</div>
+            </div>
+    
+          </div>
+        </div>
+    
+        <!-- Salary Range -->
+        <div class="mb-4">
+            <label for="salaryRange" class="form-label fs-6 fw-semibold">Salary Range (Per Month)</label><br>
+      
+            <div class="row">
+    
+                <div class="col two-fields">
+                    <!-- Minimum Salary -->
+                    <label for="salaryRange-min" class="form-label fw-semibold"><small>Minimum</small></label>
+                    <input type="number" class="form-control job-form-inp" id="salaryRangeMin" name="job[salaryRangeMin]" placeholder="Enter minimum salary" min="0" required>
+                </div>
+            
+                <div class="col two-fields">
+                    <!-- Maximum Salary -->
+                    <label for="salaryRange-max" class="form-label  fw-semibold"><small>Maximum</small></label>
+                    <input type="number" class="form-control job-form-inp" id="salaryRangeMax" name="job[salaryRangeMax]" placeholder="Enter maximum salary">
+                </div>
+            </div>
+        </div>
+      
+    
+        <!-- Required Qualifications -->
+        <div class="mb-4">
+          <label for="qualifications" class="form-label fs-6 fw-semibold">Required Qualifications</label>
+          <input class="form-control job-form-inp" id="qualifications" name="job[qualifications]" placeholder="e.g. BE, B-TECH, BCA, B.COM, Any Degree" required></input>
+          <div class="invalid-feedback">Please list the required qualifications.</div>
+        </div>
+    
+        <!-- Skills Required -->
+        <div class="mb-4">
+          <label for="skillsRequired" class="form-label fs-6 fw-semibold">Skills Required</label>
+          <input type="text" class="form-control job-form-inp" id="skillsRequired" name="job[skillsRequired]" placeholder="e.g. JavaScript, Python, SQL" required>
+          <div class="invalid-feedback">Please list the required skills.</div>
+        </div>
+    
+        <!-- Application Deadline -->
+        <div class="mb-4">
+          <label for="applicationDeadline" class="form-label fs-6 fw-semibold">Application Deadline</label>
+          <input type="date" class="form-control job-form-inp" id="applicationDeadline" name="job[applicationDeadline]" required>
+        </div>
+    
+        <!-- Company Name -->
+        <div class="mb-4">
+          <label for="companyName" class="form-label fs-6 fw-semibold">Company Name</label>
+          <input type="text" class="form-control job-form-inp" id="companyName" name="job[companyName]" placeholder="e.g. Tech-iT" required>
+          <div class="invalid-feedback">Please provide the company name.</div>
+        </div>
+    
+        <!-- Company Website -->
+        <!-- <div class="mb-4">
+          <label for="companyWebsite" class="form-label fs-6 fw-semibold">Company Website</label>
+          <input type="url" class="form-control job-form-inp" id="companyWebsite" name="job[companyWebsite]" placeholder="e.g. Tech-iT.com">
+        </div> -->
+    
+        <!-- Application Email -->
+        <!-- <div class="mb-4">
+          <label for="applicationEmail" class="form-label fs-6 fw-semibold">Application Email</label>
+          <input type="email" class="form-control job-form-inp" id="applicationEmail" name="job[applicationEmail]" placeholder="Email or Link to apply" required>
+          <div class="invalid-feedback">Please provide a valid email.</div>
+        </div> -->
+    
+        <!-- Submit Button -->
+        <button class="btn btn-primary btn-lg mt-4 mx-auto" type="submit">Post Job</button>
+    
+      </form>
+      </div>
+    
+    </div>
+</div>
+
+
+<!-- footer -->
+<%- include("../includes/footer.ejs") %>
+
+<!-- <script>
+    (function () {
+
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+
+</script> -->

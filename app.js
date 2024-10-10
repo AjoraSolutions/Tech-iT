@@ -14,6 +14,8 @@ const wrapAsync = require("./utils/wrapAsync.js");
 const indexRouter = require("./routes/index.js");
 const coursesRouter = require("./routes/courses.js");
 const aboutRouter = require("./routes/about.js");
+const jobRouter = require("./routes/job.js");
+
 
 // const bodyParser = require('body-parser');
 // const nodemailer = require('nodemailer');
@@ -95,6 +97,9 @@ app.use('/explore', coursesRouter);
 
 //about
 app.use('/about', aboutRouter);
+
+//about
+app.use('/job', jobRouter);
 
 // Route to handle form submissions
 // app.post('/submit-callback-form', (req, res) => {
