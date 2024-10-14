@@ -50,6 +50,10 @@ const jobSchema = new Schema({
         required : true,
         min : 0,
     },
+    salaryType:{
+        type : String,
+        required : true,
+    },
     qualifications:{
         type : [String],
         required : true,

@@ -99,7 +99,7 @@ app.use('/explore', coursesRouter);
 app.use('/about', aboutRouter);
 
 //about
-app.use('/job', jobRouter);
+app.use('/jobs', jobRouter);
 
 // Route to handle form submissions
 // app.post('/submit-callback-form', (req, res) => {

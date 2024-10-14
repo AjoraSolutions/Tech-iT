@@ -30,19 +30,20 @@
                 <label for="jobCategory" class="form-label fs-6 fw-semibold">Job Category</label>
                 <select class="form-select job-form-select" id="jobCategory"  name="job[category]" required>
                     <option value=""   disabled selected>Select job category</option>
-                    <option value="software">Software Development</option>
-                    <option value="data" >Data Science</option>
-                    <option value="design" >Design</option>
-                    <option value="marketing" >Marketing</option>
-                    <option value="finance" >Finance & Accounting</option>
-                    <option value="sales" >Sales</option>
-                    <option value="hr">Human Resources</option>
-                    <option value="it" >IT & Support</option>
+                    <option value="Software">Software Development</option>
+                    <option value="Data" >Data Science</option>
+                    <option value="Design" >Design</option>
+                    <option value="Marketing" >Marketing</option>
+                    <option value="Finance" >Finance & Accounting</option>
+                    <option value="Sales" >Sales</option>
+                    <option value="HR">Human Resources</option>
+                    <option value="IT" >IT & Support</option>
+                    <option value="Management">Management</option>
                 </select>
               </div>
 
               <div class="col">
-                <label for="workMode" class="form-label fs-6 fw-semibold">Job Category</label>
+                <label for="workMode" class="form-label fs-6 fw-semibold">Work Mode</label>
                 <select class="form-select job-form-select" id="workMode"  name="job[workMode]" required>
                     <option value=""   disabled selected>Select Work Mode</option>
                     <option value="On-Site">On-Site</option>
@@ -62,11 +63,11 @@
                         <label for="experienceLevel" class="form-label fs-6 fw-semibold">Experience Level</label>
                         <select class="form-select job-form-select" id="experienceLevel"  name="job[experienceLevel]" required>
                             <option value=""  disabled selected>Select experience level</option>
-                            <option value="intern" >Intern</option>
-                            <option value="junior" >Fresher</option>
-                            <option value="mid">1 - 2 years</option>
-                            <option value="senior" >2 - 5 years</option>
-                            <option value="lead" >5+ years</option>
+                            <option value="Intern" >Intern</option>
+                            <option value="Junior" >Fresher</option>
+                            <option value="Mid">1 - 2 years</option>
+                            <option value="Senior" >2 - 5 years</option>
+                            <option value="Lead" >5+ years</option>
                         </select>
                         <div class="invalid-feedback">Please select an experience level.</div>
                     </div>
@@ -126,6 +127,18 @@
                     <label for="salaryRange-max" class="form-label  fw-semibold"><small>Maximum</small></label>
                     <input type="number" class="form-control job-form-inp" id="salaryRangeMax" name="job[salaryRangeMax]" placeholder="Enter maximum salary">
                 </div>
+
+                <div class="col two-fields">
+
+                    <label for="salaryType" class="mb-2"><small>Salary Type</small> </label>
+                    
+                    <select class="form-select job-form-select " id="salaryType" name="job[salaryType]" required>
+                        <option value="LPA">LPA</option>
+                        <option value="per month">Per Month</option>
+                    </select>
+                    
+                </div>
+                
             </div>
         </div>
       
@@ -183,7 +196,7 @@
 <!-- footer -->
 <%- include("../includes/footer.ejs") %>
 
-<!-- <script>
+<script>
     (function () {
 
     'use strict'
@@ -201,4 +214,4 @@
       })
     })()
 
-</script> -->
+</script>

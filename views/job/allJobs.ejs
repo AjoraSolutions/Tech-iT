@@ -1,0 +1,138 @@
+<%- include("../layout/jobBoiler.ejs") %>
+<body>
+
+    <!-- header -->
+    <header>
+        <div class="header-title">
+            <h2>Your First</h2>
+            <h2><span>Perfect</span> Job</h2>
+            <h2>Easily</h2>
+        </div>
+    </header>
+
+    <!-- search -->
+    <div class="search-wrapper">
+        <div class="search-box">
+            
+            <form action="/jobs" method="get" class="search-card">
+                <input class="search-input" type="text" name="jobTitle" placeholder="Job title or Keywords">
+                <button class="serach-button">Search</button>
+            </form>
+            
+        </div>
+    </div>
+
+    <!-- filter box -->
+    <div class="filter-box">
+        <form action="/jobs" method="get" class="filter-dropdown" id="job-filter-form">
+            <div>
+                <select class="filter-select" id="job-level" name="experienceLevel">
+                    <option value="" disabled selected>Experience level</option>
+                    <option value="Intern" <%= experienceLevel === 'Intern' ? 'selected' : '' %>  >Intern</option>
+                    <option value="Junior" <%= experienceLevel === 'Junior' ? 'selected' : '' %>>Junior</option>
+                    <option value="Mid" <%= experienceLevel === 'Mid' ? 'selected' : '' %>>Mid</option>
+                    <option value="Senior" <%= experienceLevel === 'Senior' ? 'selected' : '' %>>Senior</option>
+                    <option value="Lead">Lead</option>
+                </select>
+                <select name="category" id="job-function" class="filter-select">category      
+                    <option value="" disabled selected>Job Category</option>
+                    <option value="IT" <%= category === 'IT' ? 'selected' : '' %>>IT</option>
+                    <option value="Software" <%= category === 'Software' ? 'selected' : '' %>>Software</option>
+                    <option value="Data" <%= category === 'Data' ? 'selected' : '' %>>Data</option>
+                    <option value="Design" <%= category === 'Design' ? 'selected' : '' %>>Design</option>
+                    <option value="Marketing" <%= category === 'Marketing' ? 'selected' : '' %>>Marketing</option>
+                    <option value="Finance" <%= category === 'Finance' ? 'selected' : '' %>>Finance</option>
+                    <option value="Sales" <%= category === 'Sales' ? 'selected' : '' %>>Sales</option>
+                    <option value="HR" <%= category === 'HR' ? 'selected' : '' %>>HR</option>
+                    <option value="Management" <%= category === 'Management' ? 'selected' : '' %>>Management</option>employmentType  </select>
+    
+                <select name="employmentType" id="employment" class="filter-select">
+                    <option value="" disabled selected>Employment type</option>
+                    <option value="Internship" <%= employmentType === 'Internship' ? 'selected' : '' %>>Internship</option>
+                    <option value="Full-Time" <%= employmentType === 'Full-Time' ? 'selected' : '' %>>Full-Time</option>
+                    <option value="Part-Time" <%= employmentType  === 'Part-Time' ? 'selected' : '' %>>Part-Time </option>
+                    <option value="Contract" <%= employmentType === 'Contract' ? 'selected' : '' %>>Contract</option>
+                    <option value="Freelance" <%= employmentType === 'Freelance' ? 'selected' : '' %>>Freelance</option>
+                </select>
+    
+                <select name="workMode" id="workMode" class="filter-select">
+                    <option value="" disabled selected>Work Mode</option>
+                    <option value="On-Site" <%= workMode === 'On-Site' ? 'selected' : '' %>>On-Site</option>
+                    <option value="Remote" <%= workMode === 'Remote' ? 'selected' : '' %>>Remote</option>
+                    <option value="Hybrid" <%= workMode === 'Hybrid' ? 'selected' : '' %>>Hybrid</option>
+                </select>
+    
+    
+            </div>
+
+            <div>
+                <button class="job-filter-btn" type="submit">Apply Filter</button>
+                <button class="job-rmFilter-btn" id="job-rmFilter-btn" onclick="" >Remove All Filters</button>
+            </div>
+            
+        </from>
+
+    </div>
+
+    <!-- job listing  -->
+    <section class="job-list" id="jobs">
+
+        <% for(let job of jobInfo) {  %>
+
+            <div class="job-card">
+
+                <div class="job-name">
+                    <div class="job-detail">
+                        <h4><%= job.companyName %></h4>
+                        <h3><%= job.title %></h3>
+                    </div>
+                </div>
+    
+                <div class="job-level skills">
+                    <p class="job-skills">
+                        <% for(let skill of job.skillsRequired){ %>
+                            <span><%= skill %></span>
+                        <% } %>
+                    </p>
+    
+                </div>
+                <div class="job-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p><%= job.city %> , <%= job.state %></p>
+                </div>
+                <div class="salary-range">
+    
+                    <p><span>Salary:</span> <%= job.salaryRangeMin %> - <%= job.salaryRangeMax %>  <%= job.salaryType %></p>
+                </div>
+    
+    
+            </div>
+    
+        <% } %>
+
+
+    </section>
+
+    <%- include("../job/addJob.ejs") %>
+
+    <script>
+
+        let rmFilter = document.getElementById("job-rmFilter-btn");
+
+        let jobLevel = document.getElementById("job-level");
+        let jobFun = document.getElementById("job-function");
+        let employmentType = document.getElementById("employment");
+        let workMode = document.getElementById("workMode");
+
+        rmFilter.addEventListener("click", function() {
+        // Reset all filters to their default state
+            jobLevel.selectedIndex = 0; // Set to the first option (disabled)
+            jobFun.selectedIndex = 0; // Set to the first option (disabled)
+            employmentType.selectedIndex = 0; // Set to the first option (disabled)
+            workMode.selectedIndex = 0; // Set to the first option (disabled)
+
+            document.querySelector('.filter-dropdown').submit();
+        });
+        
+    </script>
+</body>

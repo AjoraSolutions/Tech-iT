@@ -3,6 +3,9 @@ const router = express.Router();
 const jobControllers = require("../controllers/job.js");
 const wrapAsync = require("../utils/wrapAsync.js");
 
+router.route("/")
+    .get(jobControllers.jobs)
+
 router.route("/newJob")
     .get(jobControllers.newJobForm)
 

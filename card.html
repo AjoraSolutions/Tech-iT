@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.job-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%; /* Full width */
+    max-width: 80%; /* Limit max width to 80% of the screen */
+    margin: 10px 0; /* Space between cards */
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+}
+
+.job-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.job-company {
+    color: #666; /* Faded color for company name */
+    margin-bottom: 5px; /* Space below company name */
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-title {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+.job-details {
+    display: flex; /* Horizontal layout */
+    justify-content: space-between; /* Space between details */
+    margin: 10px 0;
+}
+
+.job-location,
+.job-salary,
+.job-experience {
+    margin: 0 10px; /* Space between items */
+    color: #666; /* Use faded color for details */
+}
+
+.job-skills {
+    margin-top: 10px;
+}
+
+.job-skills span {
+    background: #e7f1ff;
+    color: #007bff;
+    padding: 3px 5px;
+    border-radius: 3px;
+    margin-right: 5px; /* Space between skills */
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <a href="#" class="job-card"> <!-- Make the card clickable -->
+        <div class="job-company">
+            <small>Tech Innovations Ltd.</small> <!-- Company Name in Small Fade Type -->
+        </div>
+        <div class="job-header">
+            <h4 class="job-title">Software Engineer</h4>
+        </div>
+        <div class="job-details">
+            <p class="job-location">Bangalore, Karnataka</p>
+            <p class="job-salary">₹8 - 10 LPA</p>
+            <p class="job-experience">Experience Level: Mid</p> <!-- Added Experience Level -->
+        </div>
+        <div class="job-skills">
+            <strong>Skills:</strong>
+            <span>Java, Python, JavaScript</span>
+        </div>
+    </a>
+    
+</body>
+</html>

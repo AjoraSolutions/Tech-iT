@@ -8,14 +8,15 @@ module.exports.jobSchema = Joi.object( {
         description : Joi.string().required(),
         
         category: Joi.string().valid(
-            'software',
-            'data',
-            'design',
-            'marketing',
-            'finance',
-            'sales',
-            'hr',
-            'it'
+            'Software',
+            'Data',
+            'Design',
+            'Marketing',
+            'Finance',
+            'Sales',
+            'HR',
+            'IT',
+            'Management'
         ).required(),
 
         workMode: Joi.string().valid(
@@ -25,11 +26,11 @@ module.exports.jobSchema = Joi.object( {
         ).required(),
 
         experienceLevel: Joi.string().valid(
-            'intern',
-            'junior',
-            'mid',
-            'senior',
-            'lead'
+            'Intern',
+            'Junior',
+            'Mid',
+            'Senior',
+            'Lead'
         ).required(),
 
         employmentType: Joi.string().valid(
@@ -47,6 +48,10 @@ module.exports.jobSchema = Joi.object( {
         
         salaryRangeMin: Joi.number().positive().required(),
         salaryRangeMax: Joi.number().positive().greater(Joi.ref('salaryRangeMin')).required(),
+        salaryType: Joi.string().valid(
+            'LPA',
+            'Per Month',
+        ).required(),
   
         qualifications: Joi.array()
             .items(Joi.string().min(1).required())
