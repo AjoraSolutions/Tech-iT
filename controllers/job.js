@@ -81,3 +81,32 @@ module.exports.postJob = async(req,res) => {
     req.flash("success","New Listing Created Successfully!");
     res.redirect("/jobs");
 }
+
+// job detaILS
+module.exports.jobDetails = async(req,res) => {
+
+    let { id }  = req.params;
+
+    let job = await Job.findById(id);
+    
+    if(!job){
+        req.flash('error', 'Something went wrong, try again later');
+        return res.redirect("/jobs");
+    }
+
+    res.render("job/jobDetails.ejs", { body: '', job});
+}
+// Apply form
+module.exports.jobApply = async(req,res) => {
+
+    let { id }  = req.params;
+
+    let job = await Job.findById(id);
+    
+    if(!job){
+        req.flash('error', 'Something went wrong, try again later');
+        return res.redirect("/jobs");
+    }
+    
+    res.render("job/applyForm.ejs", { body: '', job});
+}

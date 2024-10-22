@@ -8,24 +8,26 @@ const mongoose = require('mongoose');
 const session = require("express-session");
 const flash = require("connect-flash");
 
-const ExpressError = require("./utils/ExpressError.js");
-const wrapAsync = require("./utils/wrapAsync.js");
-
 const indexRouter = require("./routes/index.js");
 const coursesRouter = require("./routes/courses.js");
 const aboutRouter = require("./routes/about.js");
 const jobRouter = require("./routes/job.js");
 
 
-// const bodyParser = require('body-parser');
+// const multer = require('multer');
 // const nodemailer = require('nodemailer');
-// const cors = require('cors');
+// const fs = require('fs');
+
+// Set up multer for file uploads (e.g., CV upload)
+// const upload = multer({ dest: 'uploads/' });
+
 
 // Create an instance of Express
 const app = express();
 
 // Middleware to parse incoming request bodies
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Set up EJS as the view engine with ejs-mate
 app.engine('ejs', ejsMate);
@@ -56,7 +58,6 @@ mongoose.connect(dbURL)
         req.flash('error', 'Something went wrong, try again later');
     });
 
-const Course = require('./models/course');
 
 const sessionOptions = {
     secret : process.env.SECRET,
@@ -74,13 +75,47 @@ app.use((req, res, next) => {
     next();
 });
 
-// Nodemailer transporter configuration
+// Nodemailer transporter setup (using Gmail in this example)
 // const transporter = nodemailer.createTransport({
-//     service: 'gmail', // Example using Gmail
+//     service: 'gmail',
 //     auth: {
-//         user: 'ajorasolution@gmail.com',
-//         pass: 'ajora@1234' // Use app-specific password if needed
-//     }
+//       user: 'techitcareer08@gmail.com',
+//       pass: 'techit@08',  
+//     },
+// });
+  
+// app.post('/submit-application', upload.single('attachment'), (req, res) => {
+//     const { fullName, email, phone, coverLetter } = req.body;
+//     const cvFilePath = req.file.path;
+//     const cvFileName = req.file.originalname;
+  
+//     // Set up mail options
+//     const mailOptions = {
+//       from: email,
+//       to: 'techitcareer08@gmail.com',
+//       subject: `Job Application from ${fullName}`,
+//       text: `Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\n\nCover Letter:\n${coverLetter}`,
+//       attachments: [
+//         {
+//           filename: cvFileName,
+//           path: cvFilePath,
+//         },
+//       ],
+//     };
+  
+//     // Send email with Nodemailer
+//     transporter.sendMail(mailOptions, (error, info) => {
+//       if (error) {
+//         return res.status(500).send('Error while sending email: ' + error.message);
+//       }
+//       // Delete the uploaded file after sending email
+//       fs.unlink(cvFilePath, (err) => {
+//         if (err) {
+//           return res.status(500).send('Error while deleting uploaded file: ' + err.message);
+//         }
+//         res.send('Application submitted successfully! We will get back to you soon.');
+//       });
+//     });
 // });
 
 
@@ -100,53 +135,6 @@ app.use('/about', aboutRouter);
 
 //about
 app.use('/jobs', jobRouter);
-
-// Route to handle form submissions
-// app.post('/submit-callback-form', (req, res) => {
-//     const { name, phone } = req.body;
-
-//     // Email content for callback form
-//     const mailOptions = {
-//         from: 'ajorasolution@gmail.com',
-//         to: 'ajorasolution@@gmail.com', // Your email to receive the data
-//         subject: `Call Back Request from ${name}`,
-//         text: `Name: ${name}\nPhone: ${phone}`
-//     };
-
-//     // Send email using Nodemailer
-//     transporter.sendMail(mailOptions, (error, info) => {
-//         if (error) {
-//             console.log(error);
-//             return res.status(500).send('Error sending email');
-//         }
-//         console.log('Email sent: ' + info.response);
-//         res.send('Form submitted successfully'); // Send a success message
-//     });
-// });
-
-// // Route for Appointment Form submission
-// app.post('/submit-appointment-form', (req, res) => {
-//     const { name, phone, date } = req.body;
-
-//     // Email content for appointment form
-//     const mailOptions = {
-//         from: 'ajorasolution@@gmail.com',
-//         to: 'ajorasolution@@gmail.com', // Your email to receive the data
-//         subject: `Appointment Request from ${name}`,
-//         text: `Name: ${name}\nPhone: ${phone}\nPreferred Date: ${date}`
-//     };
-
-//     // Send email using Nodemailer
-//     transporter.sendMail(mailOptions, (error, info) => {
-//         if (error) {
-//             console.log(error);
-//             return res.status(500).send('Error sending email');
-//         }
-//         console.log('Email sent: ' + info.response);
-//         res.send('Form submitted successfully'); // Send a success message
-//     });
-// });
-
 
 app.use( (err, req,res, next) => {
     

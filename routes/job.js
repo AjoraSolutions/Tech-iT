@@ -12,5 +12,10 @@ router.route("/newJob")
 router.route("/newJobPost")
     .post(wrapAsync(jobControllers.postJob));
 
+router.route("/:id/details")
+    .get(wrapAsync(jobControllers.jobDetails));
+
+router.route("/:id/apply")
+    .get(wrapAsync(jobControllers.jobApply));
 
 module.exports = router;
