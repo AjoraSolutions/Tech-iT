@@ -11,3 +11,10 @@
     margin:  52px;
     background-color: #BBDEFB;
   }
+
+  @media (max-width: 576px) {
+    .aboutUs{
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }

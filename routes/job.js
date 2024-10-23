@@ -7,7 +7,10 @@ router.route("/")
     .get(jobControllers.jobs)
 
 router.route("/newJob")
-    .get(jobControllers.newJobForm)
+    .post(jobControllers.newJobForm)
+
+router.route("/validateAdmin")
+    .get(jobControllers.validateAdmin)
 
 router.route("/newJobPost")
     .post(wrapAsync(jobControllers.postJob));

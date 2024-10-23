@@ -120,10 +120,7 @@ body {
     }
 
     .off-img-box {
-        /* display: none; */
-        width: 100%;
-        order: 1; /* Image on top */
-        margin-bottom: 20px;
+        display: none;
     }
 
     .off-circal {

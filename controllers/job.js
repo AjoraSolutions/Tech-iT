@@ -1,4 +1,5 @@
 const Job = require("../models/job");
+require('dotenv').config();
 
 // DISPLAY ALL JOBS
 module.exports.jobs = async(req,res) => {
@@ -43,7 +44,33 @@ module.exports.jobs = async(req,res) => {
 // RENDER NEW JOB FORM
 module.exports.newJobForm = async(req,res) => {
     
-    res.render("job/newJobForm.ejs", { body: ''});
+    try {
+        const { pass, email } = req.body;
+
+        // Check for empty fields
+        if (!email || !pass) {
+            req.flash('error', "Email and password are required!");
+            return res.redirect("/jobs");
+        }
+
+        // Validate credentials
+        if (email === process.env.ADMIN && pass === process.env.EMAILPASS) {
+            return res.render("job/newJobForm.ejs", { body: '' });
+        } else {
+            req.flash('error', "Wrong email or password!");
+            return res.redirect("/jobs");
+        }
+    } catch (error) {
+        console.error("Error rendering job form:", error);
+        req.flash('error', "An error occurred. Please try again.");
+        return res.redirect("/jobs");
+    }
+    
+}
+
+// Validate Admin
+module.exports.validateAdmin = async(req,res) => {
+    res.render("job/validateAdmin.ejs", {body:''});
 }
 
 // INSERT JOB DATA IN DB

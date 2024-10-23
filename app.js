@@ -1,4 +1,6 @@
-require('dotenv').config(); // Load environment variables from .env file
+if(process.env.NODE_ENV != "production"){
+    require('dotenv').config();  //accessesing environmental credentials
+} // Load environment variables from .env file
 // Import required modules
 
 const express = require('express');

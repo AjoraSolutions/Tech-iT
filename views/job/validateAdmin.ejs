@@ -1,0 +1,18 @@
+<%- include("../layout/jobBoiler.ejs") %>
+
+<div class="validateAdminPage">
+    <div class="login-container">
+        <h2 class="form-header ">Validate Yourself</h2>
+        <form action="newJob" method="POST">
+            <div class="mb-3">
+                <label for="email" class="form-label valid-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label valid-label">Password</label>
+                <input type="password" class="form-control" id="password" name="pass" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+</div>

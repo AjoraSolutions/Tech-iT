@@ -36,6 +36,7 @@ nav ul {
     list-style: none;
     gap: 1rem;
     text-align: center;
+    margin: 0;
 }
 
 nav ul li a {
@@ -303,15 +304,9 @@ nav ul li a:hover {
         display: none;
     }
 
-
-
-
-
-
-
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
     .nav-signup {
         display: none;
     }

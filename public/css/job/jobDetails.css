@@ -1,9 +1,7 @@
 .job-details-page {
     font-family: "Roboto", sans-serif;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(48, 100, 233, 0.402) 0%, rgba(11, 106, 222, 0.334) 17%);
-  }
-
+    background: rgb(29,109,253,0.5);
+}
   .job-header {
     background-color: white;
     padding: 40px;
@@ -16,7 +14,6 @@
     font-size: 2.2rem;
     font-weight: bold;
     color: #0056b3;
-    
   }
 
   .job-header p {
