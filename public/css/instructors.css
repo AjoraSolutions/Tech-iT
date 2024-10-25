@@ -105,6 +105,9 @@
 }
 
 @media (max-width: 576px) {
+    .inst-info{
+        padding: 30px;
+    }
     .inst-info h1 {
         font-size: 1.5rem;
     }

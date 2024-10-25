@@ -1,5 +1,5 @@
 .apply-page{
-    height: 120vh;
+    /* height: 120vh; */
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(1,29,139,1) 14%, rgba(1,74,168,1) 25%, rgba(0,212,255,1) 59%, rgba(58,97,179,1) 99%, rgba(0,176,232,1) 100%, rgba(0,187,239,1) 100%, rgba(0,178,233,1) 100%);
 }

@@ -3,7 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Job Detail Page</title>
+    <title>Tech-iT Job Portal | Apply for Top Tech Jobs & Career Opportunities</title>
+
+    <meta name="description" content="Explore Tech-iT Job Portal for top tech job listings and career opportunities. Apply directly for roles in technology, from software development to data analysis and more.">
+
+    <!-- Open Graph Tags for Social Sharing -->
+    <meta property="og:title" content="Tech-iT Job Portal | Apply for Tech Careers" />
+    <meta property="og:description" content="Find and apply for tech jobs through the Tech-iT Job Portal. Access listings for careers in software development, data analysis, AI, and more." />
+    <!-- <meta property="og:image" content="https://yourwebsite.com/path-to-image.jpg" />
+    <meta property="og:url" content="https://techit.com/jobs" />  -->
+
+    <!-- Keywords -->
+    <meta name="keywords" content="Tech Jobs, Job Portal, Apply for Tech Jobs, Tech Careers, Job Listings, Software Development Jobs, Data Analysis Jobs, AI Careers, Tech-it Job Portal, Career Opportunities in Tech">
+    <meta name="author" content="Tech-iT">
     <!-- Bootstrap CSS -->
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -37,12 +49,12 @@
     <%- include("../includes/flash.ejs") %>
 
     <div class="job-details-page">
-        <div class="container p-5">
+        <div class="container p-4 pt-5 job-details-page-cont">
           <!-- Job Header -->
           <div class="job-header p-3 mb-2">
             <div class="d-flex justify-content-between">
                 <h1 class="pb-2 pl-2 "><%= job.title %></h1>
-                <button type="button" class="btn btn-outline-primary rounded-pill" onclick="shareJob()" ><i class="fa-solid fa-share fa-xl"></i> </button>
+                <button type="button" class="btn btn-outline-primary rounded-pill h-50" onclick="shareJob()" ><i class="fa-solid fa-share fa-xl"></i> </button>
             </div>
             <p class="lead header-details pl-2">
               <span><i class="fa-solid fa-location-dot"></i> <%= job.workMode %> - <%= job.city %> , <%= job.state %></span>
@@ -118,8 +130,9 @@
 
         // Function to share the job via email
         function shareJob() {
-            const jobLink = window.location.href; // Replace with the actual job link if needed
-            window.open(`mailto:?subject=Job Opportunity&body=Check out this job: ${jobLink}`);
+            const jobLink = window.location.href;
+            const message = `Check out this new job requirement: ${jobLink}`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, '_blank');
         }
       </script>
   </body>

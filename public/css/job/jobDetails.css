@@ -157,6 +157,9 @@
   }
 
   @media (max-width: 576px) {
+    .job-details-page-cont{
+      padding:0 20px;
+    }
     .job-header {
       padding: 10px;
       margin-bottom: 1rem;

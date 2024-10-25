@@ -19,12 +19,14 @@ header {
 
 .header-title{
     position: absolute;
-    top: 7rem;
+    bottom: 10rem;
     left: 3rem;
     letter-spacing: 3; 
     font-size: 4rem;
     color: #64b1f5;
     text-shadow: 4px 2px 0px rgba(0, 0, 0, 0.2);
+    width: 50vw;
+    height: 15rem;
 }
 
 .header-title h2{
@@ -124,6 +126,7 @@ header {
     border: none;
     background-color:#0076de;
     padding: 0.5rem 1rem;
+    margin-bottom: 5px;
     border-radius: 0.8rem;
     font-size: 1.1rem;
     color: white;
@@ -133,6 +136,7 @@ header {
     border: 1px solid #0076de;
     padding: 0.5rem 1rem;
     border-radius: 0.8rem;
+    margin-bottom: 5px;
     font-size: 1rem;
     color: rgb(22, 5, 5);
     font-weight: 500;
@@ -222,7 +226,7 @@ header {
 /* Media Queries for Responsive Design */
 
 /* Tablets (768px and above) */
-@media (max-width: 1024px) {
+@media (max-width: 1145px) {
     .navbar {
         padding: 1rem;
     }
@@ -237,7 +241,7 @@ header {
 
     .header-title {
         font-size: 3rem;
-        top: 5rem;
+        bottom: 5rem;
         left: 2rem;
     }
 
@@ -251,7 +255,7 @@ header {
 
     .header-title h2{
     
-        font-size: 5rem;
+        font-size: 3rem;
     }
 }
 
@@ -274,10 +278,44 @@ header {
     }
 
     .header-title {
-        font-size: 2rem;
-        top: 4rem;
+        top: 18rem;
         left: 1rem;
-       
+        width: 70vw;
+    }
+    .header-title h2{
+        font-size: 3rem;
+    }
+
+    .search-wrapper {
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem 1.5rem;
+    }
+
+    .navbar-logo > a {
+        font-size: 1.2rem;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-title {
+        bottom: 2rem;
+        left: 1rem;
+        width: 70vw;
+    }
+    .header-title h2{
+        font-size: 2.8rem;
     }
 
     .search-wrapper {

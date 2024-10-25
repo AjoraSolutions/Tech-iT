@@ -5,9 +5,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "description": "Tech-it: Your gateway to career success in tech. Courses, jobs, and 100% placement guaranteed.",
+  "keywords": [
+    "tech-it",
+    "tech education",
+    "tech jobs",
+    "coding courses",
+    "tech courses",
+    "100% placement"
+  ],
+  "author": "Tech-iT",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "body-parser": "^1.20.3",
     "connect-flash": "^0.1.1",

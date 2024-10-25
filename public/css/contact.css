@@ -110,7 +110,9 @@
 
     .cont-options {
         flex-direction: column;
+        /* align-items: center; */
         gap: 1.5rem;
+        margin: auto;
     }
 
     .cont-card {

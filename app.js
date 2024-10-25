@@ -44,6 +44,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // MongoDB connection string from environment variables
 const dbURL = process.env.DB_URL;
+const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB Atlas
 
@@ -51,7 +52,7 @@ mongoose.connect(dbURL)
     .then(() => {
         console.log('Connected to MongoDB Atlas');
         // Start the server once connected to MongoDB
-        app.listen(3000, () => {
+        app.listen(PORT, () => {
             console.log('Server is listening on port 3000');
         });
     })

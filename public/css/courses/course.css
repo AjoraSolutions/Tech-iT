@@ -127,6 +127,9 @@
 }
 
 @media (max-width: 576px) {
+    .course-detail-page {
+        padding: 30px;
+    }
     .course-detail-left h1 {
         font-size: 2rem;
     }

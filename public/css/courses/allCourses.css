@@ -84,6 +84,9 @@
         flex-direction: column;
         align-items: center;
     }
+    .course-page-listing{
+        padding: 30px;
+    }
     
     .left-points-card {
         width: 100%;

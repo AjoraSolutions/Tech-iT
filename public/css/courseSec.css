@@ -33,14 +33,14 @@
 
 /* Styling the Cards */
 .landing-course-card{
-    height: 400px;
+    height: 390px;
     transition: transform 0.3s ease;
 }
 .landing-course-card:hover {
     transform: translateY(-10px);  
 }
 .landing-course-card img {
-    height: 200px;
+    height: 170px;
     object-fit: cover;
 }
 
@@ -72,12 +72,19 @@
 }
 
 @media (max-width: 768px) {
+    .landing-course-card{
+        height: 400px;
+        line-height: 1.2rem;
+    }
     .heading-title {
         font-size: 2rem; /* Slightly smaller font on mobile */
         border-bottom-width: 3px; /* Adjust border thickness for smaller screens */
     }
     .card-wrapper {
         min-width: 90%;
+    }
+    .landing-course-card{
+        height: 410px;
     }
 }
 
