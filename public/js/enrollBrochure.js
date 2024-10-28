@@ -1,5 +1,5 @@
- // Show the brochure popup
- document.getElementById('brochureBtn').addEventListener('click', function () {
+// Show the brochure popup
+document.getElementById('brochureBtn').addEventListener('click', function () {
     document.getElementById('brochurePopup').style.display = 'block';
 });
 
@@ -14,23 +14,40 @@ function closePopup(popupId) {
 }
 
 // Handle brochure form submission
+
+const bURLs = {
+
+    "Full Stack Development" : "https://drive.google.com/uc?export=download&id=1ugGaTS_7YDQfQ4xeWSb5Zr3bywKJBYbx",
+
+    "Data Analysis" : "https://drive.google.com/uc?export=download&id=10_CARUHiLCaW2B4r21RfrpFiPgsG-4RN",
+
+    "AI and Machine Learning" : "https://drive.google.com/uc?export=download&id=1fSRawOpEfVFJrnhLhcR3TR7-SG_zGBNZ",
+
+    "Digital Marketing" : "https://drive.google.com/uc?export=download&id=1WZ2QPMbbmLI2znzffO8NRtuauWG62bc6",
+
+    "Graphic Design" : "https://drive.google.com/uc?export=download&id=13HoFcooJWFaXt5IxDF4ZTVSyi7EloESz",
+
+    "Professional Accounting and MIS Specialist" : "https://drive.google.com/uc?export=download&id=1_QbeC-9oEUHGF3gR3ZKZy8wGxroYqODu",
+
+    "Website Designing" : "https://drive.google.com/uc?export=download&id=1sJRCfxPPlBP6iQ7Ce_45i2qGJubXRYv9",
+
+    "MS Office + Taxation" : "https://drive.google.com/uc?export=download&id=1dRs6ZQDv9ACpc0PL26SbUFtCndkgH54s"
+};
+
 document.getElementById('brochureForm').addEventListener('submit', function (e) {
-    // e.preventDefault();
-    // alert('Thank you! Your brochure will now download.');
+    e.preventDefault();
     closePopup('brochurePopup');
 
-    // Simulate PDF download
+    // Trigger PDF download
+    console.log(bURLs[brochureTitle]);
     const link = document.createElement('a');
-    link.href = 'path-to-your-brochure.pdf'; // Path to your PDF file
-    link.download = 'Tech-it_Brochure.pdf';  // Set the name for the downloaded file
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    link.href = bURLs[brochureTitle];
+    link.download = brochureTitle;
+    link.target = '_blank';
+    link.click(); // Trigger the download
 });
 
 // Handle enroll form submission
 document.getElementById('enrollForm').addEventListener('submit', function (e) {
-    // e.preventDefault();
-    // alert('Thank you for enrolling!');
     closePopup('enrollPopup');
 });

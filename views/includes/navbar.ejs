@@ -1,4 +1,15 @@
+<style>
 
+    .navItem:is(:link, :active, :visited){
+        color: white; /* Active link color */
+        font-weight: normal;
+    }
+    .navItem:is(:link, :active, :visited).active{
+        /* color: #ff8000; Active link color */
+        /* font-weight: bold; */
+        border-bottom: 1px solid white;
+    }
+</style>
 <div class="nav-box">
     <nav>
         <div class="logo">
@@ -6,36 +17,42 @@
         </div>
         
         <ul>
-            <li><a href="/index">HOME</a></li>
-            <li><a href="/explore/allCourses">COURSES</a></li>
-            <li><a href="/jobs" aria-disabled="true">JOBS</a></li>
-            <li><a href="/about">ABOUT US</a></li>
+            <li><a href="/index" id="nav-home" class="navItem" >Home</a></li>
+            <li><a href="/explore/allCourses" id="nav-courses" class="navItem" >Courses</a></li>
+            <li><a href="/jobs" id="nav-jobs" class="navItem" >Jobs</a></li>
+            <li><a href="/about" id="nav-about" class="navItem">About us</a></li>
         </ul>
-      
     
         <div class="hamberger">
             <i class="fa-solid fa-bars"></i>
         </div>
-            
     </nav>
     
-    
-    
     <aside class="sidebar" id="sidebar">
-    
         <div class="cross">
             <i class="fa-solid fa-caret-left fa-xl"></i>
         </div>
             
         <ul>
-            <li><a href="/index">Home</a></li>
-            <li><a href="/explore/allCourses">Courses</a></li>
-            <li><a href="/jobs">Jobs</a></li>
-            <li><a href="/about">About Us</a></li>
+            <li><a href="/index" id="nav-home-sidebar" class="navItem">Home</a></li>
+            <li><a href="/explore/allCourses" id="nav-courses-sidebar" class="navItem">Courses</a></li>
+            <li><a href="/jobs" id="nav-jobs-sidebar" class="navItem">Jobs</a></li>
+            <li><a href="/about" id="nav-about-sidebar" class="navItem">About Us</a></li>
         </ul>
-    
     </aside>
 </div>
+
+<script>
+    
+    const activePage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.navItem');
+
+    navLinks.forEach(link => {
+        if(link.href.includes(`${activePage}`)){
+            link.classList.add('active');
+        }
+    })
+</script>
 
 
     

@@ -41,7 +41,7 @@
                 <% for(let course of allCourses ) { %>
                     <div class="col">
                         <div class="landing-course-card card h-100 shadow">
-                            <img src="<%= course.courseImg %>" class="card-img-top" alt="Data Analytics">
+                            <img src="<%= course.courseImg %>" class="card-img-top" alt="<%= course.title %>">
                             <div class="card-body">
                                 <h2 class="card-title text-primary fs-4"><%= course.title %></h2>
                                 <p class="card-text"><%= course.tagline %></p>

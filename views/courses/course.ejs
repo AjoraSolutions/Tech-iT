@@ -1,5 +1,10 @@
 <%- include("../layout/coursesBoiler.ejs") %>
 
+<script>
+    // Injecting EJS variables into JavaScript
+    const brochureTitle = "<%= course.title %>";
+</script>
+
 <div class="course-detail-page">
     <!-- Hero Section -->
     <div class="course-detail-hero">
@@ -119,6 +124,7 @@
         .then(response => response.json()) // Parse JSON response
         .then(data => {
             if (data.success) {
+                
                 alert('Thank you! Brochure is downloaded.'); // Success message
                 window.location.href="/explore/allCourses";
                 this.reset(); // Reset form fields

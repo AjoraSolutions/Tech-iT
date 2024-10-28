@@ -1,3 +1,4 @@
+const { required } = require("joi");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -22,6 +23,10 @@ const courseSchema = new Schema({
         type : String,
     },
     courseImg : {
+        type : String,
+        required : true,
+    },
+    brochureURL : {
         type : String,
         required : true,
     }

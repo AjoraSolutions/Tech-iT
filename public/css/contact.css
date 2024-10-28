@@ -118,6 +118,7 @@
     .cont-card {
         width: 100%;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        margin: 0;
     }
 
     .cont-card .cont-card-body {

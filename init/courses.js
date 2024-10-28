@@ -13,6 +13,7 @@ const courses = [
       ],
       duration: "6 months",
       courseImg: "https://www.codingbytes.com/wp-content/uploads/2022/03/full-stack-web-development.jpg",
+      brochureURL: "https://drive.google.com/uc?export=download&id=1ugGaTS_7YDQfQ4xeWSb5Zr3bywKJBYbx",
     },
     {
       title: "Data Analysis",
@@ -28,6 +29,7 @@ const courses = [
       ],
       duration: "4 months",
       courseImg: "https://img.freepik.com/free-photo/business-data-analysis_53876-95296.jpg?size=626&ext=jpg",
+      brochureURL: "https://drive.google.com/uc?export=download&id=10_CARUHiLCaW2B4r21RfrpFiPgsG-4RN",
     },
     {
       title: "AI and Machine Learning",
@@ -43,6 +45,7 @@ const courses = [
       ],
       duration: "8 months",
       courseImg: "https://img.freepik.com/free-photo/ai-machine-learning-enabling-computers-replicate-human-brain-functioning-self-learning-algorithms-based-data-mining-pattern-recognition-used-solve-complex-tasks-3d-render-animation_482257-68439.jpg?t=st=1727075752~exp=1727079352~hmac=bf10c594c60ff40d3dc4cb84ee5165fcb013f7defbb7d45344c55df31acc6a0c&w=996",
+      brochureURL: "https://drive.google.com/uc?export=download&id=1fSRawOpEfVFJrnhLhcR3TR7-SG_zGBNZ",
     },
     {
       title: "Digital Marketing",
@@ -58,6 +61,7 @@ const courses = [
       ],
       duration: "3 months",
       courseImg: "https://img.freepik.com/free-photo/digital-marketing-with-icons-business-people_53876-94833.jpg?ga=GA1.1.2058582480.1727075688&semt=ais_hybrid",
+      brochureURL: "https://drive.google.com/uc?export=download&id=1WZ2QPMbbmLI2znzffO8NRtuauWG62bc6",
     },
     {
       title: "Graphic Design",
@@ -73,9 +77,10 @@ const courses = [
       ],
       duration: "4 months",
       courseImg: "https://img.freepik.com/free-vector/cartoon-graphic-design-landing-page_52683-70881.jpg?ga=GA1.1.2058582480.1727075688&semt=ais_hybrid",
+      brochureURL: "https://drive.google.com/uc?export=download&id=13HoFcooJWFaXt5IxDF4ZTVSyi7EloESz",
     },
     {
-      title: "Professional Accounting & MIS Specialist",
+      title: "Professional Accounting and MIS Specialist",
       tagline :  "Navigate the complexities of finance with precision and develop essential management information skills.",
       description:"Gain a competitive edge in finance with our Professional Accounting & MIS Specialist course. This program covers essential accounting practices and financial reporting, while also exploring management information systems. You'll learn to analyze financial data effectively and apply best practices to real-world scenarios.",
       syllabus: [
@@ -88,9 +93,10 @@ const courses = [
       ],
       duration: "5 months",
       courseImg: "https://img.freepik.com/free-photo/businessmen-hands-white-table-with-documents-drafts_176420-357.jpg?t=st=1727076463~exp=1727080063~hmac=701b9d14d2a348c9ab10142811e6b56356ba1626b3b8aabcbac00f1360f3a7ca&w=900",
+      brochureURL: "https://drive.google.com/uc?export=download&id=1_QbeC-9oEUHGF3gR3ZKZy8wGxroYqODu",
     },
     {
-        title: "Website Design",
+        title: "Website Designing",
         tagline :"Create visually stunning and user-friendly websites that enhance user experience and engagement.",
         description: "Unlock your creativity with our Website Design course. You'll explore the principles of effective design, usability, and visual aesthetics while learning how to create stunning and functional websites. Through practical projects, you'll develop a portfolio that showcases your design skills and understanding of user experience.",
         syllabus: [
@@ -103,6 +109,7 @@ const courses = [
         ],
         duration: "4 months",
         courseImg: "https://img.freepik.com/free-photo/web-design-technology-browsing-programming-concept_53876-163260.jpg?ga=GA1.1.2058582480.1727075688&semt=ais_hybrid",
+        brochureURL: "https://drive.google.com/uc?export=download&id=1sJRCfxPPlBP6iQ7Ce_45i2qGJubXRYv9",
     },
     {
         title: "MS Office + Taxation",
@@ -118,6 +125,7 @@ const courses = [
         ],
         duration: "3 months",
         courseImg: "https://img.freepik.com/free-vector/tax-audit-analysis-color-background-with-laptop-tax-form-magnifying-glass-bundles-banknotes-isometric-icons-vector-illustration_1284-72069.jpg?ga=GA1.1.2058582480.1727075688&semt=ais_hybrid",
+        brochureURL: "https://drive.google.com/uc?export=download&id=1dRs6ZQDv9ACpc0PL26SbUFtCndkgH54s",
     }
 ];
   
